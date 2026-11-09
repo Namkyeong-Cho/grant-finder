@@ -1,0 +1,77 @@
+{
+  "captured_at": "2026-11-06T18:25:05+09:00",
+  "reference_status": "official_snapshot",
+  "documents": [
+    {
+      "source_id": "samsung_science",
+      "snapshot_file": "samsung_science_2027.txt",
+      "original_file": "samsung_science.html",
+      "source_url": "https://samsungstf.org/ssrfPr/program/basic.do",
+      "fetched_url": "https://samsungstf.org/ssrfPr/program/basic.do",
+      "fetched_at": "2026-11-06T18:25:05+09:00",
+      "extraction_method": "HTMLParser visible text",
+      "content_hash": "da9afc0281716eec997a683674854b844f8794138997c139ff7a107dd8d25edd",
+      "raw_sha256": "0e284ce6e18781f1c449820368ac6c716b254a0d069b2ad0d4d01c01b1cdf3ae",
+      "status": "ok",
+      "supporting_results": null,
+      "warning": null
+    },
+    {
+      "source_id": "msit",
+      "snapshot_file": "msit_2027.txt",
+      "original_file": "msit.hwpx",
+      "source_url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=100&mId=311&mPid=121&nttSeqNo=3186911&sCode=user",
+      "fetched_url": "https://www.msit.go.kr/ssm/file/fileDown.do?atchFileNo=55534&fileOrd=3&fileBtn=A",
+      "fetched_at": "2026-11-06T18:25:05+09:00",
+      "extraction_method": "HWPX XML document-order text",
+      "content_hash": "7ad47de9c6b3e68139a9e41be4030f1ee89ca4396838489105b3614fb3fdf310",
+      "raw_sha256": "303a91c7c2a764f71cbaa6d4981c53a78278cf0d82b797846c9867259acac3dc",
+      "status": "ok",
+      "supporting_results": null,
+      "warning": null
+    },
+    {
+      "source_id": "amazon",
+      "snapshot_file": "amazon_2026_fall.txt",
+      "original_file": "amazon.html",
+      "source_url": "https://www.amazon.science/research-awards/latest-news/amazon-research-awards-opens-fall-2026-call-for-proposals",
+      "fetched_url": "https://www.amazon.science/research-awards/latest-news/amazon-research-awards-opens-fall-2026-call-for-proposals",
+      "fetched_at": "2026-11-06T18:25:05+09:00",
+      "extraction_method": "HTMLParser visible text",
+      "content_hash": "715c6daf62e3288d3aaf7b8b9c071c32e670fb2dc796ff357e54f0aadf16a9ee",
+      "raw_sha256": "3a3844694e4f29146e10e4486195456aa6345e2aecd44d88f8732736af5c2317",
+      "status": "ok",
+      "supporting_results": [
+        {
+          "url": "https://www.amazon.science/research-awards/program-rules",
+          "fetched_at": "2026-11-06T18:25:05+09:00",
+          "content_hash": "fe90937a606f107f1f62fdd1e8c72061e1bc7b5d7839de2176734436a94b344f",
+          "status": "ok",
+          "error": null
+        },
+        {
+          "url": "https://www.amazon.science/research-awards/frequently-asked-questions",
+          "fetched_at": "2026-11-06T18:25:05+09:00",
+          "content_hash": "a1c58c86252ebda9583e9679bf14325bfa1940eccd438ef46f75c7c8c5e87fa0",
+          "status": "ok",
+          "error": null
+        }
+      ],
+      "warning": null
+    },
+    {
+      "source_id": "posco",
+      "snapshot_file": "posco_18.txt",
+      "original_file": "posco.html",
+      "source_url": "https://www.postf.org/news/notice/1001068",
+      "fetched_url": "https://www.postf.org/news/notice/1001068",
+      "fetched_at": "2026-11-06T18:25:05+09:00",
+      "extraction_method": "HTMLParser visible text",
+      "content_hash": "96c77780b5713a02967bdedb003f5f2743bd45225f65436ce50d6294159f9f58",
+      "raw_sha256": "7c77cc94de348d34323eb0ecd0c2139efa7097b18e1387b8a86240366285c12b",
+      "status": "ok",
+      "supporting_results": null,
+      "warning": "주요 모집내용이 이미지입니다. HTML 텍스트만으로 전체 일정·자격을 확인하지 마세요."
+    }
+  ]
+}

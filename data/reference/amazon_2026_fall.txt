@@ -1,0 +1,164 @@
+Amazon Research Awards opens Fall 2026 call for proposals
+Submissions open October 1 and close on November 11, 2026
+By Amazon Research Awards team
+October 1, 2026
+1 min read
+Share
+Share
+Copy link
+Email
+X
+LinkedIn
+Facebook
+Line
+Reddit
+QZone
+Sina Weibo
+WeChat
+WhatsApp
+分享到微信
+x
+As the Amazon Research Awards (ARA) program continues to expand in scope, so does our call for proposals list. To that end, starting October 1, we will open the Fall 2026 call for proposals in nine research areas listed below.
+Agentic AI
+AI for Information Security
+Amazon Security
+Automated Reasoning
+AWS Cryptography
+Build on Trainium: Agentic, Recursive Improvement of Kernels and Frameworks
+Multilingual and Contextual AI Evaluation
+On-Device Multimodal Perception
+Synthetic Data Generation for Multimodal Perception
+The deadline for submissions has been extended to November 11, 2026 at 11:59PM Pacific Time. Proposals will be reviewed for the quality of their scientific content, creativity, and their potential for impact at scale. Proposals related to theory, practice, and novel techniques are all welcome.
+ARA provides grant recipients unrestricted funds and AWS promotional credits. Funded projects are assigned an Amazon research contact, and recipients also receive training resources, including AWS tutorials and hands-on sessions with Amazon scientists and engineers.
+Before applying, we encourage researchers to visit the ARA website and read our frequently asked questions for more specific program information. We look forward to receiving your submissions.
+Tags
+Amazon Research Awards
+About the Author
+Amazon Research Awards team
+
+[추가 공식 원문: https://www.amazon.science/research-awards/program-rules]
+ARA Program Rules
+9 min read
+Share
+Share
+Copy link
+Email
+X
+LinkedIn
+Facebook
+Line
+Reddit
+QZone
+Sina Weibo
+WeChat
+WhatsApp
+分享到微信
+x
+Last updated: March 26, 2025
+By applying to or participating in the Amazon Research Awards Program (the “ARA Program”), you (defined below) agree to the following rules (“Rules”). These Rules are solely between Amazon.com, Inc. and its affiliates (“Amazon”, “we”, “us”, or “our”) and the entity that you represent (“you” or “your”), including the lead researcher/s who applies to the ARA Program (the “Principal Investigator”) and any members of the research team. Capitalized terms not defined herein may be defined in the AWS Agreements (as defined below). You and/or the Principal Investigator are responsible for distributing these Rules to all members of the research team before they participate in any research in connection with a proposal funded by the ARA Program.
+I. Eligibility Requirements
+To be eligible for an ARA Program award (“Award”), the Principal Investigator must be (1) either a full-time faculty member at an accredited academic institution or a permanent researcher at a non-governmental organization with recognized legal status in its country (equivalent to 501(c)(3) status under the United States Internal Revenue Code) and (2) at or above the age of majority in their jurisdiction of residence at the time of application. Each Principal Investigator is permitted to submit only one proposal to the ARA Program per call for proposal period.
+By submitting your proposal to the ARA Program, you represent that your Principal Investigator:
+(a) is not a paid employee of a government entity (other than an accredited academic institution);
+(b) is not under US export controls or sanctions;
+(c) has not been a director, officer, employee, intern or contractor of Amazon within the 12 months preceding submission of your proposal to the ARA Program (“Ineligible Personnel”);
+(d) is not a member of the immediate family or household of Ineligible Personnel; and
+(e) has not participated in or had decision-making authority over any cloud infrastructure procurements involving Amazon.
+The ARA Program is void in Cuba, Iran, Syria, North Korea and the Crimea, Luhansk and Donetsk regions of Ukraine, and where otherwise prohibited by law.
+Amazon employees, including employees of Amazon Web Services, Inc. (“AWS”), are not eligible to receive an Award.
+Amazon is not responsible for your internal organizational policies and procedures that may restrict your (including the Principal Investigator’s) ability to submit a proposal to the ARA Program.
+II. Application Content
+No proposal to the ARA Program may contain any confidential information and no part may be marked as ‘confidential.’ Amazon does not accept any legal obligation (whether of confidentiality, compensation, return or otherwise) with respect to any proposals. Amazon reserves the right to implement competitive, similar, or identical ideas in the future, without restriction or obligation. You understand and acknowledge that Amazon has wide access to technology, designs, and other materials, and may work on and/or develop projects and ideas that may be competitive with, similar to, or identical to your proposal in theme, idea, format or other respects, inclusive. You acknowledge and agree that you will not be entitled to any compensation as a result of Amazon’s use of any such similar or identical material that has or may come to Amazon from other sources.
+You represent and warrant that your proposal:
+(a) is either your original work or an update to your original work;
+(b) does not, to your knowledge, infringe any third-party patent rights; and
+(c) does not, to your knowledge, infringe, misappropriate or otherwise violate any other third-party intellectual property rights (i.e., other than patent rights), including any copyrights, trade secrets, trademarks, contract or licensing rights, rights of publicity or privacy, or moral rights.
+III. Awards
+Proposals selected for funding will receive an Award that may include cash, Promotional Credit (as defined in the AWS Promotional Credit Terms & Conditions), or both. Award funding is not extendable or transferable without our written consent, but you may submit new proposals for subsequent ARA Program calls.
+All Award amounts will be determined by Amazon in its sole discretion. Any cash component of an Award:
+(a) will be structured as a one-time unrestricted gift to your Principal Investigator’s academic institution or organization;
+(b) will be provided directly to your academic institution or organization for distribution and management; and
+(c) may not be used for indirect expenses which are not allocable, reasonable, adequately documented, and consistent with established policies and practices of your academic institution or organization.
+You are responsible for the administration and apportionment of any costs and expenses associated with an Award, including any allowable and allocable overhead or indirect costs. In order to process any cash Award, you will be required to complete administrative requirements, which may include submitting a W-9 form to us, completing a tax questionnaire, and registering in Amazon’s Payee Central System. If you do not fulfill the administrative requirements for processing cash Awards within two years of your receipt of an Award notification, Amazon reserves the right to withhold payment. Any payment from Amazon to you under the Award may be issued by a purchase order. Except where prohibited by law, you are responsible for all taxes (including income tax and value added tax) that may be imposed on you by relevant local tax authorities.
+These Rules, the agreements referenced herein, and any other agreement regarding the relationship between you and Amazon will constitute a Master Agreement under the terms of the purchase order.
+IV. AWS Customer Agreement and AWS Promotional Credit Terms & Conditions
+Amazon may make available to you an amount of AWS promotional computing credits (“AWS Credits”) for use in support of this Agreement. AWS Credits provided to University under this Agreement are subject to the AWS Promotional Credit Terms and Conditions (as may be updated from time to time on the AWS website). You acknowledge and agree that any use of AWS services, including but not limited to use of AWS Credits, is subject to the terms and conditions set forth in the AWS Customer Agreement (https://aws.amazon.com/agreement/), and/or any separate, bespoke agreement that you have entered into with Amazon governing use of AWS services (collectively, the “AWS Agreements”). In the event of any conflict between this Agreement and the AWS Agreements, the terms of the AWS Agreements shall take precedence.
+V. Privacy
+You acknowledge and agree that we may collect, store, share, and otherwise use personally identifiable information provided during the ARA Program application process, including but not limited to, name, mailing address, phone number, and email address. All personally identifiable information collected is subject to, and will be used in accordance with, the Amazon Privacy Notice, including for administering the ARA Program and verifying applicants’ identities, addresses, and telephone numbers in the event a proposal is selected for funding. By participating in the ARA Program, you consent to the transfer of personal data to the United States for purposes of administering the ARA Program, conducting publicity about the ARA Program, and additional purposes that are consistent with goals relating to the ARA Program. The data controller for information collected by us is Amazon.com, Inc., 410 Terry Ave North, Seattle, Washington 98109, USA.
+VI. Publicity
+Except where prohibited, you consent to our use of your name and the Principal Investigator’s name and title, proposal title, and proposal abstract text for purposes of identifying Amazon’s support of you, the Principal Investigator, the proposal and/or the ARA Program.
+You may acknowledge our support by stating that your research is supported by the ARA Program (e.g., “Research reported in this [publication/press release] was supported by an Amazon Research Award, [Cycle /Year].”). Any use of Amazon or AWS logos is subject to the Amazon Trademark Guidelines and AWS Trademark Guidelines, respectively. Any other use of Amazon or AWS logos requires Amazon’s or such affiliate’s prior written consent. You must receive Amazon’s prior written consent before issuing a press release or making any public disclosure regarding your participation in the ARA Program. You agree not to misrepresent or embellish the relationship between us and you. You will not imply any relationship or affiliation between us and you except as expressly permitted by these Rules.
+VII. Limitation of Liability
+TO THE EXTENT PERMITTED BY APPLICABLE LAW, YOU ACCEPT THE CONDITIONS STATED IN THESE RULES, AGREE TO BE BOUND BY THE DECISIONS OF AMAZON, AND WARRANT THAT YOU ARE ELIGIBLE TO PARTICIPATE IN THE ARA PROGRAM. TO THE EXTENT PERMITTED BY APPLICABLE LAW, YOU, EACH RESEARCH TEAM MEMBER, THE PRINCIPAL INVESTIGATOR AND THE PRINCIPAL INVESTIGATOR’S INSTITUTION HEREBY RELEASES AMAZON FROM, AND WAIVES ANY AND ALL CLAIMS AGAINST AMAZON FOR, ANY LOSSES, LIABILITY, AND DAMAGES OF ANY KIND, (INCLUDING FOR ANY LOSS OF DATA, LOST PROFITS, COST OF COVER OR OTHER SPECIAL, INCIDENTAL, CONSEQUENTIAL, INDIRECT, PUNITIVE, EXEMPLARY OR RELIANCE DAMAGES) INCURRED OR SUSTAINED IN CONNECTION WITH OR ARISING OUT OF (1) THE ARA PROGRAM OR ANY TRAVEL OR ACTIVITY RELATED THERETO, (2) USE OF ANY PROPOSAL OR RIGHTS THEREIN, OR (3) ANY BREACH OF ANY AGREEMENT OR WARRANTY ASSOCIATED WITH THE ARA PROGRAM, INCLUDING THESE RULES, HOWEVER CAUSED AND REGARDLESS OF THEORY OF LIABILITY.
+VIII. Changes
+We may amend any of these Rules at our sole discretion by posting the revised terms on the ARA Program website. Your continued participation in the ARA Program after the effective date of the revised Rules constitutes your acceptance of the rules.
+IX. Disputes
+Any dispute or claim relating in any way to the ARA Program will be resolved in accordance with terms set forth in the AWS Agreements.
+X. Representations and Warranties
+You represent and warrant that:
+(a) your receipt of any Award is neither prohibited by nor inconsistent with any applicable laws, regulations, or binding orders, including applicable ethics rules or internal institutional rules;
+(b) you have completed or will complete all legal and ethical requirements necessary to accept the Award;
+(c) your receipt of the Award will not knowingly create a conflict of interest for Amazon;
+(d) the Principal Investigator has not participated in, nor had, and do not anticipate participating in or having, any decision-making authority over, any procurements or purchasing decisions involving Amazon on behalf of your organization during the previous or upcoming twelve (12) months; and
+(e) you will properly book and record the Award in your accounting documents in accordance with applicable laws and regulations.
+In the event that your representations and warranties under this section are or become inaccurate, you must notify us immediately (research-awards@amazon.com) and any Award your organization receives will be voidable.
+
+[추가 공식 원문: https://www.amazon.science/research-awards/frequently-asked-questions]
+General
+General
+Applying for an award
+Proposal review process
+Award information
+Other
+General
+Applying for an award
+Proposal review process
+Award information
+Other
+General
+What research areas does ARA fund?
+ARA funds in a variety of research areas relevant to Amazon, such as applied machine learning, automated reasoning, computer vision, fairness in artificial intelligence, machine learning algorithms and theory, natural language processing, robotics, security, sustainability and more. Please refer to the detailed CFPs for more information.
+What types of proposals does ARA fund?
+The Amazon Research Awards (ARA) program funds academic research and related contributions to open-source projects by top academic researchers around the world.
+What is the structure of an ARA award? Can it be extended?
+Awards are structured as one-time unrestricted gifts to the Principal Investigator's academic institution or organization, and can include cash and AWS Promotional Credits. Though this funding is not extendable, applicants can submit new proposals for subsequent calls.
+Applying for an award
+How do I apply?
+Please follow the instructions on the specific CFP you are applying to.
+Who is eligible to apply?
+Researchers from around the world are encouraged to apply. Please refer to the ARA Program Rules for eligibility.
+What are the timelines for proposal submissions and decisions?
+We evaluate research proposals and provide decisions via email to all applicants approximately three months after the submission deadline. Please follow the timeline on the specific CFP you are applying to.
+What is an Amazon contact and is one required to apply?
+An Amazon contact is an Amazon employee who is aware of the proposal, familiar with the Principal Investigator’s research and may be willing to serve as an Amazon research contact for the proposal, if it is selected. An Amazon contact is not required to submit a proposal. While the ARA team is not able to provide an Amazon contact for the PI prior to submission, all funded proposals will be assigned an Amazon research contact by the review panel.
+Is it possible to have multiple faculty members on a single proposal?
+Each proposal application should be submitted by a single faculty member, who will serve as the Primary PI. One co-PI per proposal can be included in the application form. ARA defines a co-PI as an individual equally accountable for research performance and management of funding. Formal co-PI’s must be a full-time faculty/permanent researcher and meet ARA eligibility requirements. Other members of the research team can and should be mentioned within the proposal.
+Is it possible for one faculty member to be on multiple grants?
+Principle Investigators can only submit one proposal at each deadline. A Primary PI can be listed as a co-PI on an additional proposal, but must withdraw if the other proposal is selected. It’s also possible that another CFP may decide to fund your research, if it meets the scope of that CFP.
+What budget expenses should I include in my proposal submission?
+A proposed cash budget is generally expected to support one to two graduate students (or a post-doctoral researcher) for one year, plus some conference travel and equipment. The budget should include a list of expected costs specified in USD and is not required to include administrative overhead costs. The final award amount will be determined by the awards panel. Please refer to the CFP for specific budget guidelines.
+Additionally, proposals may include a request for AWS Promotional Credits1. Proposals should include the requested amount, a short justification, a list of AWS products and any AWS Public Datasets to be used in the proposed research. The final amount of free AWS Promotional Credits will be determined by the awards panel.
+1. Please note that your use of any AWS Promotional Credit is subject to the general AWS Customer Agreement terms or other terms governing your use of AWS Services (“Agreement”). In the event of a conflict between these Rules and the Agreement, the Agreement will control with respect to your access to and use of the Service Offerings. Additionally, any use of AWS Promotional Credit will be in accordance with and subject to the AWS Promotional Credit Terms & Conditions. In the event of a conflict between these Rules and the AWS Promotional Credit Terms & Conditions, the AWS Promotional Credit Terms & Conditions will govern with respect to any AWS Promotional Credit you receive.
+Proposal review process
+Who evaluates the proposals and when will I know the outcome?
+Project proposals are reviewed by an internal awards panel and the results are communicated approximately three months after the submission deadline. We will communicate the decision to the primary PI listed on each proposal, and will make an announcement on the ARA website. We expect the primary PI to notify the rest of their team about funding decisions.
+Will I be able to find out why my proposal was not accepted?
+Unfortunately, due to the number of proposals we receive, we are unable to provide detailed reasons a proposal was not accepted.
+Award information
+What happens after the ARA recipients are announced?
+Each project will be assigned an Amazon research contact. The researchers are encouraged to maintain regular communication with their Amazon contact to discuss ongoing research and project progress. We also encourage publishing the outcome of the project and committing any related code to open-source code repositories.
+Does Amazon retain any intellectual property and licensing on the material developed during the time period that a student is funded?
+ARA funding is distributed as unrestricted gifts to universities. As such, the funding does not result in any transfer or license of any intellectual property rights. Please refer to the ARA Program Rules for more information.
+Do recipients have access to Amazon data?
+Recipients will have access to Amazon datasets that are already public, such as the Amazon Bin Image Dataset, but not to non-public data.
+Does Amazon accept any legal obligation with respect to submitted proposals?
+We are happy to review non-confidential project proposals. As such, project proposals shall not contain any confidential information (please do not include any information in your proposal that you or others consider confidential). Amazon does not accept any legal obligation (whether of confidentiality, compensation, return or otherwise) with respect to any proposals. Amazon reserves the right to implement similar ideas in the future without restriction or obligation. Please refer to the ARA Program Rules for more information.
+Other
+How can I contact the ARA team?
+We provide limited email support via research-inquiry@amazon.com. Due to the volume of emails we receive, we may not be able to respond to questions where the answer is available on the website.
+How can I find out about future ARA calls for proposals?
+Please email research-inquiry@amazon.com to be added to the CFP email announcement.
+Is the AWS Machine Learning Research Awards (MLRA) part of ARA?
+Yes, in 2020 the two programs merged and MLRA now funds awards through ARA, under the AWS AI call for proposal.
+Does Amazon provide any other funding opportunities?
+Yes, please visit the collaborations page for more information.

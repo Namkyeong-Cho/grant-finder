@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+cache/
+outputs/
+state/
+data/profile*.json
+!data/profile.example.json
+data/settings.json
+data/progress.json
+data/application_history.json
+.env
+.env.*
+!.env.example

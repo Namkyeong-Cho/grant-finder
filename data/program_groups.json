@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "description": "같은 지원사업의 유형·세부 전형·회차를 한 사업 안에 묶는 명시적 표시 규칙입니다. 기관이나 URL이 같다는 이유만으로 별도 사업을 합치지 않습니다. 후보·공고 ID와 전형별 자격·마감·제약은 유지합니다.",
+  "grouping_notes": {
+    "nrf_personal_basic": "인프라·글로벌 매칭·한우물·일반 개인연구는 개인기초 안의 서로 다른 지원 유형입니다. 기초연구실(BRL)은 집단연구 사업이므로 별도 유지합니다.",
+    "jsps_invitational": "초청연구 Invitational의 단기·장기만 묶습니다. Standard Postdoctoral Fellowship은 별도 프로그램으로 유지합니다.",
+    "same_institution": "Samsung GRO, Google의 개별 프로그램, IAS Membership/Summer Collaborators, Anthropic의 개별 프로그램 등은 같은 기관이어도 별도 사업으로 유지합니다."
+  },
+  "groups": [
+    {
+      "id": "nrf_personal_basic",
+      "title": "개인기초연구",
+      "candidate_ids": [
+        "gov_nrf_young_infrastructure",
+        "gov_nrf_global_matching_dfg",
+        "gov_nrf_hanwoomul_replacement",
+        "gov_nrf_personal_basic_blocked"
+      ],
+      "notice_ids": [
+        "msit_2027_core_a",
+        "msit_2027_young_a"
+      ],
+      "track_labels": {
+        "gov_nrf_young_infrastructure": "신진연구자 인프라",
+        "gov_nrf_global_matching_dfg": "글로벌 매칭형 · 독일 DFG",
+        "gov_nrf_hanwoomul_replacement": "한우물파기 · 기존과제 교체",
+        "gov_nrf_personal_basic_blocked": "일반 개인연구 · 핵심·신진",
+        "msit_2027_core_a": "핵심연구 유형A · 2027 1차",
+        "msit_2027_young_a": "신진연구 유형A · 2027 1차"
+      }
+    },
+    {
+      "id": "samsung_future",
+      "title": "삼성미래기술육성사업",
+      "candidate_ids": [
+        "samsung_science_2027",
+        "samsung_technology_2027"
+      ],
+      "notice_ids": [
+        "samsung_2027_h1",
+        "samsung_2027_h2"
+      ],
+      "track_labels": {
+        "samsung_science_2027": "Science · 2027",
+        "samsung_technology_2027": "Technology · 2027",
+        "samsung_2027_h1": "Science · 2027 상반기",
+        "samsung_2027_h2": "Science · 2027 하반기"
+      }
+    },
+    {
+      "id": "amazon_research_awards",
+      "title": "Amazon Research Awards",
+      "candidate_ids": [
+        "amazon_ara_agentic_ai_fall_2026",
+        "amazon_ara_automated_reasoning_fall_2026",
+        "amazon_build_trainium_fall_2026"
+      ],
+      "notice_ids": [
+        "amazon_2026_fall"
+      ],
+      "track_labels": {
+        "amazon_ara_agentic_ai_fall_2026": "Agentic AI · Fall 2026",
+        "amazon_ara_automated_reasoning_fall_2026": "Automated Reasoning · Fall 2026",
+        "amazon_build_trainium_fall_2026": "Build on Trainium · Fall 2026",
+        "amazon_2026_fall": "Fall 2026 공모"
+      }
+    },
+    {
+      "id": "amd_university",
+      "title": "AMD University Program",
+      "candidate_ids": [
+        "amd_ai_hpc_cluster",
+        "amd_research_donation",
+        "amd_faculty_grants"
+      ],
+      "notice_ids": [],
+      "track_labels": {
+        "amd_ai_hpc_cluster": "AI & HPC Cluster · 계산자원",
+        "amd_research_donation": "Research Donations · 장비·소프트웨어",
+        "amd_faculty_grants": "Faculty Grants · 연구제안"
+      }
+    },
+    {
+      "id": "ai_for_math",
+      "title": "AI for Math Fund",
+      "candidate_ids": [
+        "ai_for_math_seed",
+        "ai_for_math_annual"
+      ],
+      "notice_ids": [],
+      "track_labels": {
+        "ai_for_math_seed": "Seed Grants · 수시",
+        "ai_for_math_annual": "Annual Grants · 연례"
+      }
+    },
+    {
+      "id": "humboldt_research_fellowship",
+      "title": "Humboldt Research Fellowship",
+      "candidate_ids": [
+        "intl_humboldt_experienced",
+        "excluded_humboldt_postdoc"
+      ],
+      "notice_ids": [],
+      "track_labels": {
+        "intl_humboldt_experienced": "Experienced Researchers · 경력연구자",
+        "excluded_humboldt_postdoc": "Postdoctoral Researchers · 박사후연구자"
+      }
+    },
+    {
+      "id": "jsps_invitational",
+      "title": "JSPS Invitational Fellowship",
+      "candidate_ids": [
+        "intl_jsps_invitational_short",
+        "intl_jsps_invitational_long"
+      ],
+      "notice_ids": [],
+      "track_labels": {
+        "intl_jsps_invitational_short": "Short-term · FY2027",
+        "intl_jsps_invitational_long": "Long-term · FY2027 / 차기 회차"
+      }
+    },
+    {
+      "id": "erc_grants",
+      "title": "ERC 연구지원",
+      "candidate_ids": [
+        "intl_erc_starting",
+        "intl_erc_consolidator",
+        "intl_erc_synergy"
+      ],
+      "notice_ids": [],
+      "track_labels": {
+        "intl_erc_starting": "Starting Grant · 2027 / 차기 회차",
+        "intl_erc_consolidator": "Consolidator Grant · 2027",
+        "intl_erc_synergy": "Synergy Grant · 2027"
+      }
+    },
+    {
+      "id": "msca_actions",
+      "title": "Marie Skłodowska-Curie Actions (MSCA)",
+      "candidate_ids": [
+        "intl_msca_european_pf",
+        "intl_msca_staff_exchanges"
+      ],
+      "notice_ids": [],
+      "track_labels": {
+        "intl_msca_european_pf": "European Postdoctoral Fellowships",
+        "intl_msca_staff_exchanges": "Staff Exchanges · 2027"
+      }
+    }
+  ]
+}

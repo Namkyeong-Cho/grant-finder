@@ -1,0 +1,812 @@
+{
+  "analyzed_on": "2026-11-07",
+  "files": [
+    {
+      "file": "run.py",
+      "lines": 7,
+      "sha256": "bb1ab38ef3aa12873d4bc257e11610b83992dcdf135edd8afd3d44eded5b3e26",
+      "symbols": []
+    },
+    {
+      "file": "grantfinder/__init__.py",
+      "lines": 3,
+      "sha256": "c69de77708503b74d2877b693088cf3eb2e0097be561ee0c70c6afb4937330d5",
+      "symbols": []
+    },
+    {
+      "file": "grantfinder/agent.py",
+      "lines": 109,
+      "sha256": "6a74bdf9c11e68eb87a8b24ce4c6dc96fd0eea89a545053d70115eb1a1355d24",
+      "symbols": [
+        {
+          "name": "tool",
+          "start": 6,
+          "end": 9,
+          "type": "function"
+        },
+        {
+          "name": "answer_question",
+          "start": 22,
+          "end": 109,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/application_history.py",
+      "lines": 76,
+      "sha256": "f8d29e081a276185f3705c16aed8a840a67dc9f210868b6f930b00b1b39f026e",
+      "symbols": [
+        {
+          "name": "load_history",
+          "start": 14,
+          "end": 45,
+          "type": "function"
+        },
+        {
+          "name": "_values",
+          "start": 48,
+          "end": 51,
+          "type": "function"
+        },
+        {
+          "name": "history_markdown",
+          "start": 54,
+          "end": 62,
+          "type": "function"
+        },
+        {
+          "name": "render_history_html",
+          "start": 65,
+          "end": 76,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/catalog_html.py",
+      "lines": 145,
+      "sha256": "e8a8ce5378ebacb24abf9ee2a25908b839221fde9bcda24731f5ab287f06f6eb",
+      "symbols": [
+        {
+          "name": "e",
+          "start": 12,
+          "end": 13,
+          "type": "function"
+        },
+        {
+          "name": "link",
+          "start": 16,
+          "end": 17,
+          "type": "function"
+        },
+        {
+          "name": "deadline",
+          "start": 20,
+          "end": 32,
+          "type": "function"
+        },
+        {
+          "name": "remaining",
+          "start": 35,
+          "end": 39,
+          "type": "function"
+        },
+        {
+          "name": "render_catalog",
+          "start": 42,
+          "end": 99,
+          "type": "function"
+        },
+        {
+          "name": "render_catalog.options",
+          "start": 81,
+          "end": 82,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/cli.py",
+      "lines": 433,
+      "sha256": "4b6a0d80a67916a16521217102180f9f5c7e199c92df986639defdb9137617b2",
+      "symbols": [
+        {
+          "name": "clock",
+          "start": 20,
+          "end": 24,
+          "type": "function"
+        },
+        {
+          "name": "resolve",
+          "start": 27,
+          "end": 29,
+          "type": "function"
+        },
+        {
+          "name": "records",
+          "start": 32,
+          "end": 35,
+          "type": "function"
+        },
+        {
+          "name": "registry_links",
+          "start": 38,
+          "end": 42,
+          "type": "function"
+        },
+        {
+          "name": "sources_command",
+          "start": 45,
+          "end": 60,
+          "type": "function"
+        },
+        {
+          "name": "load_progress",
+          "start": 63,
+          "end": 64,
+          "type": "function"
+        },
+        {
+          "name": "application_records",
+          "start": 67,
+          "end": 69,
+          "type": "function"
+        },
+        {
+          "name": "application_history_appendix",
+          "start": 72,
+          "end": 74,
+          "type": "function"
+        },
+        {
+          "name": "active_profile_path",
+          "start": 77,
+          "end": 78,
+          "type": "function"
+        },
+        {
+          "name": "catalog_appendix",
+          "start": 81,
+          "end": 106,
+          "type": "function"
+        },
+        {
+          "name": "doctor",
+          "start": 109,
+          "end": 118,
+          "type": "function"
+        },
+        {
+          "name": "discover_command",
+          "start": 121,
+          "end": 140,
+          "type": "function"
+        },
+        {
+          "name": "write_html_report",
+          "start": 143,
+          "end": 158,
+          "type": "function"
+        },
+        {
+          "name": "report_command",
+          "start": 161,
+          "end": 188,
+          "type": "function"
+        },
+        {
+          "name": "make_report",
+          "start": 191,
+          "end": 237,
+          "type": "function"
+        },
+        {
+          "name": "personalize",
+          "start": 240,
+          "end": 260,
+          "type": "function"
+        },
+        {
+          "name": "demo",
+          "start": 263,
+          "end": 274,
+          "type": "function"
+        },
+        {
+          "name": "run",
+          "start": 277,
+          "end": 348,
+          "type": "function"
+        },
+        {
+          "name": "ask",
+          "start": 351,
+          "end": 365,
+          "type": "function"
+        },
+        {
+          "name": "update_progress",
+          "start": 368,
+          "end": 388,
+          "type": "function"
+        },
+        {
+          "name": "main",
+          "start": 391,
+          "end": 433,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/collectors.py",
+      "lines": 331,
+      "sha256": "b873b9e6ec3a966e9225543145026d402277f8cd0c5851523e09a8eebe9f030a",
+      "symbols": [
+        {
+          "name": "_now",
+          "start": 23,
+          "end": 24,
+          "type": "function"
+        },
+        {
+          "name": "_write_json",
+          "start": 27,
+          "end": 31,
+          "type": "function"
+        },
+        {
+          "name": "load_sources",
+          "start": 34,
+          "end": 36,
+          "type": "function"
+        },
+        {
+          "name": "_allowed",
+          "start": 39,
+          "end": 48,
+          "type": "function"
+        },
+        {
+          "name": "_OfficialRedirects",
+          "start": 51,
+          "end": 59,
+          "type": "class"
+        },
+        {
+          "name": "_OfficialRedirects.__init__",
+          "start": 52,
+          "end": 54,
+          "type": "function"
+        },
+        {
+          "name": "_OfficialRedirects.redirect_request",
+          "start": 56,
+          "end": 59,
+          "type": "function"
+        },
+        {
+          "name": "_download",
+          "start": 62,
+          "end": 75,
+          "type": "function"
+        },
+        {
+          "name": "_HTMLText",
+          "start": 78,
+          "end": 145,
+          "type": "class"
+        },
+        {
+          "name": "_HTMLText.__init__",
+          "start": 83,
+          "end": 92,
+          "type": "function"
+        },
+        {
+          "name": "_HTMLText._visible",
+          "start": 94,
+          "end": 96,
+          "type": "function"
+        },
+        {
+          "name": "_HTMLText.handle_starttag",
+          "start": 98,
+          "end": 114,
+          "type": "function"
+        },
+        {
+          "name": "_HTMLText.handle_startendtag",
+          "start": 116,
+          "end": 119,
+          "type": "function"
+        },
+        {
+          "name": "_HTMLText.handle_endtag",
+          "start": 121,
+          "end": 132,
+          "type": "function"
+        },
+        {
+          "name": "_HTMLText.handle_data",
+          "start": 134,
+          "end": 139,
+          "type": "function"
+        },
+        {
+          "name": "_HTMLText.text",
+          "start": 141,
+          "end": 145,
+          "type": "function"
+        },
+        {
+          "name": "_decode",
+          "start": 148,
+          "end": 157,
+          "type": "function"
+        },
+        {
+          "name": "_msit_links",
+          "start": 160,
+          "end": 172,
+          "type": "function"
+        },
+        {
+          "name": "extract_hwpx",
+          "start": 175,
+          "end": 213,
+          "type": "function"
+        },
+        {
+          "name": "extract_hwpx.walk",
+          "start": 178,
+          "end": 195,
+          "type": "function"
+        },
+        {
+          "name": "_pdf_text",
+          "start": 216,
+          "end": 230,
+          "type": "function"
+        },
+        {
+          "name": "collect_source",
+          "start": 233,
+          "end": 301,
+          "type": "function"
+        },
+        {
+          "name": "discover",
+          "start": 304,
+          "end": 331,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/countdown.py",
+      "lines": 91,
+      "sha256": "64f43650bb7d1b56d3f268d4fe5fdc4614b98ce5240ffe8ab6b66a96831ea29b",
+      "symbols": [
+        {
+          "name": "countdown_html",
+          "start": 9,
+          "end": 32,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/evaluate.py",
+      "lines": 294,
+      "sha256": "ea41e4a40c95f7b09a50cd00d74276ee5dad6f9a2551d31fa967ed063fcb912d",
+      "symbols": [
+        {
+          "name": "_zone",
+          "start": 27,
+          "end": 31,
+          "type": "function"
+        },
+        {
+          "name": "_aware",
+          "start": 34,
+          "end": 35,
+          "type": "function"
+        },
+        {
+          "name": "_event_relation",
+          "start": 38,
+          "end": 61,
+          "type": "function"
+        },
+        {
+          "name": "_get",
+          "start": 64,
+          "end": 70,
+          "type": "function"
+        },
+        {
+          "name": "_normal",
+          "start": 73,
+          "end": 83,
+          "type": "function"
+        },
+        {
+          "name": "_comparable",
+          "start": 86,
+          "end": 96,
+          "type": "function"
+        },
+        {
+          "name": "_condition",
+          "start": 99,
+          "end": 135,
+          "type": "function"
+        },
+        {
+          "name": "_has_conflict",
+          "start": 138,
+          "end": 145,
+          "type": "function"
+        },
+        {
+          "name": "_task",
+          "start": 148,
+          "end": 155,
+          "type": "function"
+        },
+        {
+          "name": "_application_state",
+          "start": 158,
+          "end": 162,
+          "type": "function"
+        },
+        {
+          "name": "evaluate_notice",
+          "start": 165,
+          "end": 294,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/funding_catalog.py",
+      "lines": 94,
+      "sha256": "3b8f265624cd720c6dbafb4c3390475c64f7ae5bd97a35963f241cd07bb02d01",
+      "symbols": [
+        {
+          "name": "safe_url",
+          "start": 18,
+          "end": 23,
+          "type": "function"
+        },
+        {
+          "name": "priority_key",
+          "start": 26,
+          "end": 31,
+          "type": "function"
+        },
+        {
+          "name": "load_catalog",
+          "start": 34,
+          "end": 72,
+          "type": "function"
+        },
+        {
+          "name": "catalog_markdown",
+          "start": 75,
+          "end": 94,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/html_report.py",
+      "lines": 287,
+      "sha256": "75a1c8692eee0b7f418b2aea7cbb27fa61e8f04f5bba0952ae93893909973f40",
+      "symbols": [
+        {
+          "name": "_e",
+          "start": 20,
+          "end": 21,
+          "type": "function"
+        },
+        {
+          "name": "_link",
+          "start": 24,
+          "end": 33,
+          "type": "function"
+        },
+        {
+          "name": "_date",
+          "start": 36,
+          "end": 51,
+          "type": "function"
+        },
+        {
+          "name": "_due",
+          "start": 54,
+          "end": 57,
+          "type": "function"
+        },
+        {
+          "name": "_remaining",
+          "start": 60,
+          "end": 63,
+          "type": "function"
+        },
+        {
+          "name": "_list",
+          "start": 66,
+          "end": 67,
+          "type": "function"
+        },
+        {
+          "name": "_empty",
+          "start": 70,
+          "end": 71,
+          "type": "function"
+        },
+        {
+          "name": "_table",
+          "start": 74,
+          "end": 77,
+          "type": "function"
+        },
+        {
+          "name": "_row",
+          "start": 80,
+          "end": 82,
+          "type": "function"
+        },
+        {
+          "name": "render_html_report",
+          "start": 85,
+          "end": 225,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/llm.py",
+      "lines": 122,
+      "sha256": "885e0a5f0adedbb7c16ca3dd7ee96409125e63832f8732ac8916a77f3a015d30",
+      "symbols": [
+        {
+          "name": "validate_local_host",
+          "start": 13,
+          "end": 20,
+          "type": "function"
+        },
+        {
+          "name": "NoRedirect",
+          "start": 23,
+          "end": 25,
+          "type": "class"
+        },
+        {
+          "name": "NoRedirect.redirect_request",
+          "start": 24,
+          "end": 25,
+          "type": "function"
+        },
+        {
+          "name": "OllamaClient",
+          "start": 28,
+          "end": 122,
+          "type": "class"
+        },
+        {
+          "name": "OllamaClient.__init__",
+          "start": 29,
+          "end": 35,
+          "type": "function"
+        },
+        {
+          "name": "OllamaClient.request",
+          "start": 37,
+          "end": 48,
+          "type": "function"
+        },
+        {
+          "name": "OllamaClient.ensure_local_model",
+          "start": 50,
+          "end": 64,
+          "type": "function"
+        },
+        {
+          "name": "OllamaClient.chat",
+          "start": 66,
+          "end": 81,
+          "type": "function"
+        },
+        {
+          "name": "OllamaClient.extract",
+          "start": 83,
+          "end": 122,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/program_groups.py",
+      "lines": 46,
+      "sha256": "ac31170e65aa446645435a053e7a652ccb06fcbdcdb4a787403310cc8aebaa42",
+      "symbols": [
+        {
+          "name": "load_program_groups",
+          "start": 9,
+          "end": 26,
+          "type": "function"
+        },
+        {
+          "name": "group_records",
+          "start": 29,
+          "end": 46,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/report.py",
+      "lines": 195,
+      "sha256": "3a16478e05ac9461fea2639d95abb3788f68f3193997faca9bb025acf5276e54",
+      "symbols": [
+        {
+          "name": "_cell",
+          "start": 27,
+          "end": 30,
+          "type": "function"
+        },
+        {
+          "name": "_link",
+          "start": 33,
+          "end": 38,
+          "type": "function"
+        },
+        {
+          "name": "_event_value",
+          "start": 41,
+          "end": 57,
+          "type": "function"
+        },
+        {
+          "name": "_state",
+          "start": 60,
+          "end": 64,
+          "type": "function"
+        },
+        {
+          "name": "_due",
+          "start": 67,
+          "end": 75,
+          "type": "function"
+        },
+        {
+          "name": "_change_text",
+          "start": 78,
+          "end": 91,
+          "type": "function"
+        },
+        {
+          "name": "render_report",
+          "start": 94,
+          "end": 195,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/schema.py",
+      "lines": 206,
+      "sha256": "0fbf46e628cee30652b1fa04d8b75d2a2d66113fde0025f8329ef951ff56d8c0",
+      "symbols": [
+        {
+          "name": "obj",
+          "start": 13,
+          "end": 14,
+          "type": "function"
+        },
+        {
+          "name": "normalize",
+          "start": 39,
+          "end": 40,
+          "type": "function"
+        },
+        {
+          "name": "unpack_response",
+          "start": 43,
+          "end": 93,
+          "type": "function"
+        },
+        {
+          "name": "_date_has_evidence",
+          "start": 96,
+          "end": 123,
+          "type": "function"
+        },
+        {
+          "name": "validate_extraction",
+          "start": 126,
+          "end": 182,
+          "type": "function"
+        },
+        {
+          "name": "crosscheck_reviewed",
+          "start": 185,
+          "end": 206,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/source_registry.py",
+      "lines": 71,
+      "sha256": "4a8697e221b40adf0d30e68223ec072296211140cecea55651f954964cddd0b1",
+      "symbols": [
+        {
+          "name": "_https_url",
+          "start": 9,
+          "end": 15,
+          "type": "function"
+        },
+        {
+          "name": "resolve_links",
+          "start": 18,
+          "end": 42,
+          "type": "function"
+        },
+        {
+          "name": "resolve_links.url",
+          "start": 22,
+          "end": 25,
+          "type": "function"
+        },
+        {
+          "name": "resolve_links.walk",
+          "start": 27,
+          "end": 40,
+          "type": "function"
+        },
+        {
+          "name": "load_registry",
+          "start": 45,
+          "end": 71,
+          "type": "function"
+        }
+      ]
+    },
+    {
+      "file": "grantfinder/storage.py",
+      "lines": 45,
+      "sha256": "41e227eab9a11fa34ed917e4b3e0b76bf1bfdc0fb5244bac013686928eefc74b",
+      "symbols": [
+        {
+          "name": "read_json",
+          "start": 10,
+          "end": 14,
+          "type": "function"
+        },
+        {
+          "name": "write_json",
+          "start": 17,
+          "end": 23,
+          "type": "function"
+        },
+        {
+          "name": "fingerprint",
+          "start": 26,
+          "end": 27,
+          "type": "function"
+        },
+        {
+          "name": "changes_since",
+          "start": 30,
+          "end": 45,
+          "type": "function"
+        }
+      ]
+    }
+  ]
+}

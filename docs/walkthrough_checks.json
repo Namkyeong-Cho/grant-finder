@@ -1,0 +1,93 @@
+{
+  "checked_on": "2026-11-07",
+  "markdown_file": "../../week10_real_application_explain.md",
+  "pdf_file": "../../week10_real_application_explain.pdf",
+  "exporter": "@marp-team/marp-cli 4.5.0",
+  "theme": "week09-course",
+  "theme_file": "agentic_ai/slides/week09_marp.css",
+  "theme_sha256": "fd5184b531ed41c132f9429508b1269e634f48677d63351a3af77d284d0c61fb",
+  "build_command": "npm --prefix agentic_ai/marp run pdf:week10",
+  "pdf_pages": 97,
+  "slide_size": "16:9 (960 x 540 pt)",
+  "source_files_unchanged": false,
+  "layout_overflow_slides": [],
+  "replacement_characters": 0,
+  "markdown_sha256": "25958c3be293d3d825fa95661c5a2b261f1fb42e7dabff59e78dd34258e7fb09",
+  "pdf_sha256": "2db1c139ce18ba958e270678eea27a5ebd7060aea7b297827c808ca621ef33ad",
+  "visually_checked_pages": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "pdf_bookmarks": 231,
+  "prose_passages_edited": 132,
+  "code_snippets_unchanged": false,
+  "removed_development_provenance_slide": true,
+  "removed_redundant_captions": 7,
+  "opening_flow": [
+    "screen_overview",
+    "cv_or_homepage_input",
+    "known_programs_and_bulk_add",
+    "custom_site_input",
+    "track_conditions_and_deadlines",
+    "application_plan",
+    "problem_and_data",
+    "code_explanation"
+  ],
+  "runtime_modified_for_this_change": true,
+  "code_explanation_body_unchanged": true,
+  "runtime_tests_last_recorded": 208,
+  "runtime_tests_run_for_this_export": true,
+  "screen_slides": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "screen_assets": [
+    "assets/grant_finder/application_plan.png",
+    "assets/grant_finder/candidate_science.png",
+    "assets/grant_finder/candidate_technology.png",
+    "assets/grant_finder/custom_site.png",
+    "assets/grant_finder/input_cv.png",
+    "assets/grant_finder/input_homepage.png",
+    "assets/grant_finder/known_picker.png",
+    "assets/grant_finder/overview_candidates.png",
+    "assets/grant_finder/overview_tabs.png"
+  ],
+  "all_original_inventory_symbols_in_pdf": true,
+  "original_inventory_symbol_count": 115,
+  "original_inventory_missing_symbols": [],
+  "previous_export_visually_checked_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    14,
+    15,
+    16,
+    17
+  ],
+  "runtime_tests_for_this_export": {
+    "passed": 63,
+    "scope": [
+      "test_cv_profile",
+      "test_homepage_profile",
+      "test_workspace",
+      "test_workspace_http"
+    ]
+  },
+  "cover_and_first_six_screen_slides_unchanged": true,
+  "inventory_symbol_check": "Qualified names are checked by component; class and method names are printed separately."
+}

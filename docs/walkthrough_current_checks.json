@@ -1,0 +1,145 @@
+{
+  "checked_on": "2026-11-08",
+  "pages": 38,
+  "first_topic": "Qwen3.8 27B and Ollama setup before Grant Finder workflow",
+  "exporter": "@marp-team/marp-cli 4.5.0",
+  "build_command": "npm --prefix agentic_ai/marp run pdf:week10",
+  "markdown_sha256": "35610aeea77a3703c1e87bd54ea78557ee24022679e68c75adc88fffa2c58963",
+  "pdf_sha256": "2d23b10a105676f5d2e04457b590e8d28aa0552041973f1ffc17bc7888625a98",
+  "all_screens_current": true,
+  "screens": [
+    {
+      "path": "assets/grant_finder/current_20261108/workflow_tabs.png",
+      "sha256": "924b5cfbe916850817905ad26e35244d0a302b3f5e9ae3552ed518bca0853202"
+    },
+    {
+      "path": "assets/grant_finder/current_20261108/researcher_storage_focus.png",
+      "sha256": "ef03de1e9fdb230215a2ca7e03d1b6e755d16d704e4caaf3090655384fe91391"
+    },
+    {
+      "path": "assets/grant_finder/current_20261108/researcher_input.png",
+      "sha256": "71c9a3d748485f847925e28ad1debddd442d762dd0d1b6b030d91dc0888f4858"
+    },
+    {
+      "path": "assets/grant_finder/current_20261108/researcher_json_research_only_focus.png",
+      "sha256": "df3cff08fb206dacc08997dbee9bab5cd1618267fcb36d274f8433d688a8f06e"
+    },
+    {
+      "path": "assets/grant_finder/current_20261108/source_selection_focus.png",
+      "sha256": "e23c926c26c649e9e9f81047aec24f792944ea2f489c4126b9693fd82bbebce7"
+    },
+    {
+      "path": "assets/grant_finder/current_20261108/keyword_search_input.png",
+      "sha256": "9cbcf39cfb47a0313174abd07402322a777bffb9f7bf7adb3d38976dbddfa09f"
+    },
+    {
+      "path": "assets/grant_finder/current_20261108/keyword_search_results_controls.png",
+      "sha256": "ad5ed48ad09eb79a98b3ec55cd5f0d6bb67375378a5f2b4c6a21a9dce40019df"
+    },
+    {
+      "path": "assets/grant_finder/current_20261108/candidates_focus.png",
+      "sha256": "7c3e9cadc74f5d28bd278a040ab1bfb43472894a73169c9000c376928766a952"
+    },
+    {
+      "path": "assets/grant_finder/current_20261108/application_plan_focus.png",
+      "sha256": "cb5c5631f96c36dbcef11e1e6d451cf2fa0d2ac449581e42f47780b75dd78e8e"
+    }
+  ],
+  "layout_overflow_slides": [],
+  "broken_images": 0,
+  "code_syntax": {
+    "python_snippets": 10,
+    "javascript_snippets": 5,
+    "shell_blocks": 5
+  },
+  "examples_verified": [
+    "JSON import without model -> ['PDE']",
+    "keyword normalization removes duplicates",
+    "deadline -> open / unconfirmed",
+    "PDF bytes -> text",
+    "model fixture -> persisted JSON -> HTTP response",
+    "JSON edit -> save without model call"
+  ],
+  "capture_data": "Current UI; actual shared official program records; explicit example profile and preparation plan; no live search/model used for screenshots.",
+  "real_user_state_changed": false,
+  "previous_111_page_version": "archive/2026-11-08_111pages/",
+  "research_only_examples": true,
+  "latest_reviewed_pages": [
+    3
+  ],
+  "lecture_introduction": {
+    "restored": [
+      "cover",
+      "problem and four-step workflow",
+      "current completed interface"
+    ],
+    "existing_walkthrough_slides_preserved": 29,
+    "existing_walkthrough_starts_on": 10,
+    "layout_check": "Native Marp HTML and generated PDF opening pages verified",
+    "pdf_opened": false,
+    "problem_heading": "연구지원 기회 탐색 및 신청 준비",
+    "qwen_preparation_pages": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "portable_execution_instructions": {
+    "working_directory": "distributed grant_finder folder containing run.py",
+    "environment": ".venv created in the distributed folder",
+    "launcher": "python run.py serve --open --model qwen3.8:27b",
+    "readme_includes_windows": true,
+    "standalone_smoke_check": "Copied app into temporary directory and created fresh venv; run.py serve --help passed with no course parent folder",
+    "layout_check_pages": [
+      11,
+      34,
+      36,
+      37
+    ]
+  },
+  "title_style_revision": {
+    "style": "Concise nominal slide titles",
+    "changed_titles": 29,
+    "reviewed_titles": 38,
+    "body_and_code_unchanged": true,
+    "all_titles_one_line": true,
+    "heading_overflow": 0,
+    "heading_overlap": 0
+  },
+  "qwen_preparation": {
+    "model": "qwen3.8:27b",
+    "pages_added": 6,
+    "sequence": [
+      "Qwen overview",
+      "Python, Ollama, and model roles",
+      "model tag and resources",
+      "Ollama installation",
+      "download and model verification",
+      "first chat response"
+    ],
+    "official_sources_checked_on": "2026-11-08",
+    "official_sources": [
+      "https://qwen.readthedocs.io/en/stable/getting_started/concepts.html",
+      "https://ollama.com/library/qwen3.8:27b",
+      "https://docs.ollama.com/cli",
+      "https://docs.ollama.com/macos",
+      "https://docs.ollama.com/windows",
+      "https://docs.ollama.com/linux",
+      "https://docs.ollama.com/api/introduction",
+      "https://github.com/ollama/ollama/blob/main/cmd/interactive.go"
+    ],
+    "download_size_display": "approximately 18GB as checked",
+    "real_model_download_or_inference_performed": false,
+    "verification": [
+      "All shell examples syntax checked without executing them",
+      "doctor and serve help confirms --model option",
+      "Native Marp HTML all 38 pages checked",
+      "Intro pages and Python setup rendered and visually checked",
+      "README Windows timezone dependency included"
+    ]
+  },
+  "latest_edit_on": "2026-11-09"
+}

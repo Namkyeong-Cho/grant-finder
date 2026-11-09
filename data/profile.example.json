@@ -1,0 +1,29 @@
+{
+  "id": "demo-professor",
+  "name": "가상 교수 · 수업용",
+  "is_demo": true,
+  "affiliation": "가상대학교",
+  "affiliation_type": "university",
+  "employment": "full_time",
+  "country": "KR",
+  "nationality": null,
+  "phd_date": null,
+  "first_faculty_date": null,
+  "birth_date": null,
+  "keywords": ["수학", "인공지능", "기계학습", "편미분방정식", "수치해석", "최적화"],
+  "research_summary": "수학적 분석과 수치해석을 활용하는 인공지능·기계학습 연구를 검토하는 수업용 가상 설정입니다.",
+  "active_projects": null,
+  "documents": {
+    "cv": null,
+    "research_plan": null,
+    "representative_papers": null,
+    "recommendation_letters": null
+  },
+  "internal_deadlines": {},
+  "institution_url": null,
+  "assumptions": [
+    "국내 대학 전임교원이라는 실습 설정입니다. 실제 교수님의 개인정보나 경력 기록이 아닙니다.",
+    "학위일·임용일·생년·국적·수행과제·서류 보유 여부는 입력하지 않았습니다.",
+    "null은 확인 전을 뜻합니다. active_projects를 []로 바꾸면 수행 중인 과제가 없음을 확인했다는 뜻입니다."
+  ]
+}

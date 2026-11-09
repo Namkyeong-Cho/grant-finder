@@ -1,0 +1,174 @@
+{
+  "checked_on": "2026-11-07",
+  "entrypoint": "python3 run.py serve --open",
+  "workspace_url": "http://127.0.0.1:8765",
+  "fresh_state": {
+    "profile": null,
+    "known": [],
+    "results": []
+  },
+  "catalog": {
+    "program_count": 82,
+    "track_count": 96
+  },
+  "ui_columns": [
+    "공고·지원사업",
+    "예정일",
+    "현재 단계",
+    "다음 할 일·원문"
+  ],
+  "runtime_tests_passed": 216,
+  "browser": {
+    "javascript_errors": 0,
+    "desktop_overflow": false,
+    "mobile_overflow": false,
+    "desktop_width": 1440,
+    "mobile_width": 390
+  },
+  "local_model_check": {
+    "model": "qwen3.8:27b",
+    "cv": "synthetic test CV",
+    "groups_selected": 17,
+    "cv_and_catalog_seconds": 82.8
+  },
+  "screenshots": {
+    "input": "tabs_input.png",
+    "candidates": "tabs_candidates_example.png",
+    "applications": "tabs_applications_example.png",
+    "note": "후보·지원계획 예시는 시험용 CV와 실제 보유 사업자료를 사용했습니다."
+  },
+  "dashboard_sha256": "cb5a4c7c3adf702c9ab4998eacb28b3ed8b7430a2ed96e726f326d37a27f4a3e",
+  "tabs": [
+    "CV·후보 입력",
+    "연구 정보 정리",
+    "지원 후보",
+    "지원할 사업"
+  ],
+  "automatic_refresh_hours": 24,
+  "automatic_refresh_runs_in": "local_server",
+  "persistent_fields": [
+    "known",
+    "memory.programs",
+    "memory.sources",
+    "memory.search_runs",
+    "applications",
+    "automation"
+  ],
+  "background_discovery_response": "HTTP 202",
+  "browser_real_http": {
+    "javascript_errors": [],
+    "selected_tracks": [
+      "samsung_science_2027"
+    ],
+    "status": "preparing",
+    "priority": "high",
+    "memo_persisted": true,
+    "task_done_persisted": true,
+    "tab_reload_restored": true,
+    "mobile_overflow": false,
+    "blank_default": true
+  },
+  "local_review_smoke": {
+    "model": "qwen3.8:27b",
+    "host": "http://127.0.0.1:11434",
+    "seconds": 16.94,
+    "calls": [
+      {
+        "seconds": 16.94,
+        "done_reason": "stop",
+        "eval_count": 496,
+        "response_chars": 1567,
+        "parse_ok": true
+      }
+    ],
+    "groups": [
+      {
+        "id": "samsung_future",
+        "review_status": "reviewed",
+        "review_error": null,
+        "eligibility_status": "needs_review",
+        "tracks": [
+          {
+            "id": "samsung_science_2027",
+            "eligibility_status": "needs_review",
+            "checks": [
+              {
+                "condition": "국내 소재 대학 등의 교원·연구원",
+                "status": "met",
+                "quote": "국내 소재 대학 등의 교원·연구원",
+                "quote_in_source": true
+              },
+              {
+                "condition": "국적 무관",
+                "status": "unknown",
+                "quote": "국적 무관",
+                "quote_in_source": true
+              }
+            ],
+            "next_action": "삼성미래기술육성사업 Science 2027 트랙의 2026-12-11 마감일을 확인하고 연구계획서 초안을 준비하세요.",
+            "deadline_unchanged": true
+          },
+          {
+            "id": "samsung_technology_2027",
+            "eligibility_status": "needs_review",
+            "checks": [
+              {
+                "condition": "국내 기관 교원·연구원",
+                "status": "unknown",
+                "quote": "국내 기관 교원·연구원",
+                "quote_in_source": true
+              },
+              {
+                "condition": "국적 무관",
+                "status": "unknown",
+                "quote": "국적 무관",
+                "quote_in_source": true
+              }
+            ],
+            "next_action": "삼성미래기술육성사업 Technology 2027 트랙의 2026-12-11 마감일을 확인하고 연구계획서 초안을 준비하세요.",
+            "deadline_unchanged": true
+          }
+        ]
+      }
+    ]
+  },
+  "discovery_plan_cache": "profile+known+program_facts+model+prompt_version",
+  "workspace_local_timeout_seconds": 300,
+  "background_job_real": {
+    "status": "succeeded",
+    "error": null,
+    "seconds": 467.3,
+    "programs": 10,
+    "memory_programs": 10,
+    "memory_sources": 11,
+    "applications": 1,
+    "notes_preserved": true,
+    "review_errors": []
+  },
+  "discovery_plan_cache_real": {
+    "hit": true,
+    "model_calls": 0,
+    "seconds": 0.002
+  },
+  "profile_input_methods": [
+    "cv_file",
+    "homepage_url"
+  ],
+  "homepage_pages_limit": 3,
+  "homepage_input_screenshot": "homepage_input.png",
+  "homepage_http_fetch_verified": true,
+  "bulk_and_custom_sources": {
+    "bulk_count": 158,
+    "repeated_bulk_duplicates": 0,
+    "pending_before_cv": 159,
+    "first_cv_pending_preserved": true,
+    "known_persisted": 159,
+    "custom_sites_persisted": 2,
+    "filtered_clear_preserves_others": true,
+    "javascript_errors": [],
+    "mobile_overflow": false
+  },
+  "custom_sources_saved_per_profile": true,
+  "known_limit": 500,
+  "four_tabs_verification": "four_tabs_check.json"
+}

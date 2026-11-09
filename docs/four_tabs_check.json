@@ -1,0 +1,46 @@
+{
+  "tabs": [
+    {
+      "id": "tab-input",
+      "label": "1\nCV·후보 입력"
+    },
+    {
+      "id": "tab-profile",
+      "label": "2\n연구 정보 정리"
+    },
+    {
+      "id": "tab-candidates",
+      "label": "3\n지원 후보\n0"
+    },
+    {
+      "id": "tab-applications",
+      "label": "4\n지원할 사업\n0"
+    }
+  ],
+  "real_http_fixture": true,
+  "cv_upload_auto_profile": true,
+  "homepage_auto_profile": true,
+  "source_visible": true,
+  "free_text_saved": true,
+  "known_draft_saved": true,
+  "discovery_to_candidates": true,
+  "application_selection": true,
+  "tab_reload_restored": true,
+  "keyboard_four_tabs": true,
+  "no_fixed_profile_fields": true,
+  "desktopOverflow": false,
+  "mobileOverflow": false,
+  "errors": [],
+  "manual_first_save_stays_profile": true,
+  "mobile_layout": {
+    "overflow": false,
+    "columns": "176px 176px",
+    "fontSize": "11px"
+  },
+  "dashboard_sha256": "cb5a4c7c3adf702c9ab4998eacb28b3ed8b7430a2ed96e726f326d37a27f4a3e",
+  "screenshots": {
+    "desktop": "four_tabs_profile.png",
+    "mobile": "four_tabs_profile_mobile.png"
+  },
+  "fixture_note": "격리된 임시 작업공간과 로컬 모델·홈페이지 응답 시험 자료를 사용한 실제 HTTP 브라우저 검증"
+}

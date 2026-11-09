@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "notices": [
+    {
+      "id": "msit_2027_core_a",
+      "source_id": "msit",
+      "title": "2027년도 개인기초연구 1차 핵심연구 유형A",
+      "sponsor": "과학기술정보통신부·한국연구재단",
+      "year": 2027,
+      "track": "핵심연구 유형A",
+      "snapshot_file": "reference/msit_2027.txt",
+      "reference_status": "official_snapshot",
+      "source_ref": "msit_url"
+    },
+    {
+      "id": "msit_2027_young_a",
+      "source_id": "msit",
+      "title": "2027년도 개인기초연구 1차 신진연구 유형A",
+      "sponsor": "과학기술정보통신부·한국연구재단",
+      "year": 2027,
+      "track": "신진연구 유형A",
+      "snapshot_file": "reference/msit_2027.txt",
+      "reference_status": "official_snapshot",
+      "source_ref": "msit_url"
+    },
+    {
+      "id": "samsung_2027_h1",
+      "source_id": "samsung_science",
+      "title": "삼성 Science 2027년 상반기 연구과제",
+      "sponsor": "삼성미래기술육성재단",
+      "year": 2027,
+      "track": "Science 2027년 상반기",
+      "snapshot_file": "reference/samsung_science_2027.txt",
+      "reference_status": "official_snapshot",
+      "source_ref": "samsung_science_url"
+    },
+    {
+      "id": "samsung_2027_h2",
+      "source_id": "samsung_science",
+      "title": "삼성 Science 2027년 하반기 연구과제",
+      "sponsor": "삼성미래기술육성재단",
+      "year": 2027,
+      "track": "Science 2027년 하반기",
+      "snapshot_file": "reference/samsung_science_2027.txt",
+      "reference_status": "official_snapshot",
+      "source_ref": "samsung_science_url"
+    },
+    {
+      "id": "amazon_2026_fall",
+      "source_id": "amazon",
+      "title": "Amazon Research Awards Fall 2026",
+      "sponsor": "Amazon",
+      "year": 2026,
+      "track": "Fall 2026",
+      "snapshot_file": "reference/amazon_2026_fall.txt",
+      "reference_status": "official_snapshot",
+      "source_ref": "amazon_url"
+    },
+    {
+      "id": "posco_18",
+      "source_id": "posco",
+      "title": "제18기 포스코사이언스펠로십",
+      "sponsor": "포스코청암재단",
+      "year": 2026,
+      "track": "제18기",
+      "snapshot_file": "reference/posco_18.txt",
+      "content_warning": "핵심 모집조건이 이미지 포스터에 있습니다. 이 스냅샷은 HTML 텍스트이며 자격·일정은 원본 포스터 확인 필요.",
+      "reference_status": "official_snapshot",
+      "source_ref": "posco_url"
+    }
+  ]
+}

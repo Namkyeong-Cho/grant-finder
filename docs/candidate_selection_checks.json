@@ -1,0 +1,69 @@
+{
+  "checked_on": "2026-11-08",
+  "changes": [
+    "Explicit general-web search backends with per-engine fallback; no Wikipedia auto backend",
+    "Short error summary with collapsed original diagnostics",
+    "Program and individual track selection in candidate results",
+    "Filtered select-all includes candidates beyond the first 12",
+    "Sequential bulk application save; duplicate exclusion; failed selections retained"
+  ],
+  "backend_validation": {
+    "all_unit_tests_passed": 338,
+    "targeted_search_tests_passed": 29,
+    "public_probe": {
+      "query": "research funding grants",
+      "found": 2,
+      "attempts": [
+        "duckduckgo:empty",
+        "brave:empty",
+        "yahoo:ok"
+      ],
+      "user_cache_or_workspace_used": false
+    }
+  },
+  "browser_validation": {
+    "fixture_programs": 16,
+    "fixture_tracks": 33,
+    "scenarios_passed": 7,
+    "desktop_width": 1440,
+    "mobile_width": 390,
+    "checked": [
+      "Default zero selection",
+      "Program selection and independent track selection",
+      "Partial selection indicators",
+      "Filtered and unrendered candidate select-all",
+      "Filters preserve selection",
+      "Bulk save and duplicate exclusion",
+      "Partial save failure and retry",
+      "Brief failure status without technical diagnostics",
+      "No horizontal overflow"
+    ],
+    "real_api_writes": 0,
+    "external_requests": 0,
+    "artifact_directory": "/tmp/grant-candidate-selection-qa/"
+  },
+  "live_validation": {
+    "results": 34,
+    "applications": 3,
+    "checkbox_width_px": 17,
+    "javascript_errors": 0,
+    "desktop_horizontal_overflow": false,
+    "server_restarted": true,
+    "saved_state_files_unchanged": 7
+  },
+  "source_sha256": {
+    "grantfinder/web/dashboard.html": "f164c5020f20725398b7a6cc6fdcc823b3dbc20c87301ea8f023cfcf520dbe61",
+    "grantfinder/web_search.py": "8ecdb76e042a1adfcbf842c291e203f88e21f8935e52f5710e122c32470f9a5b",
+    "tests/test_web_search.py": "fa40649fca608d4629672623c4bdbf20d69f7872e182ed47e2eec17a18c50866",
+    "README.md": "cef0e272bc69fef7df7e868b12e7723712e8cd0a5edad5528b0928b26991f015"
+  },
+  "latest_copy_check": {
+    "message": "일부 정보를 불러오지 못했습니다.",
+    "diagnosticPanelPresent": false,
+    "technicalExplanationVisible": false,
+    "selectionControlsPresent": true,
+    "overflow": false,
+    "errors": [],
+    "realApiWrites": 0
+  }
+}

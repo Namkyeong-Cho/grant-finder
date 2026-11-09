@@ -1,0 +1,2739 @@
+{
+  "schema_version": 2,
+  "investigated_on": "2026-11-06",
+  "updated_on": "2026-11-08",
+  "description": "연구지원 사이트·공고·신청·첨부의 단일 관리 메모리. 후보 자료는 source_ref와 additional_source_refs로 이 파일의 pages.id를 참조합니다.",
+  "maintenance": {
+    "site_settings": "sources: 사이트 이름·공식 도메인·자동수집 설정. enabled=true는 수집기를 확인한 4곳만 유지합니다.",
+    "page_addresses": "pages: URL은 여기에서 수정합니다. 같은 문서를 쓰는 별도 사업은 candidate_ids로 구분합니다.",
+    "snapshots": "outputs, cache, reviewed_notices, reference의 URL은 당시 수집·판정 근거인 저장 기록입니다."
+  },
+  "sources": [
+    {
+      "id": "nrf",
+      "name": "한국연구재단",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "nrf.re.kr"
+      ],
+      "note": "세부요강·정정·FAQ·결과 공지. 현재 자동수집 미설정",
+      "url_ref": "nrf_url"
+    },
+    {
+      "id": "msit",
+      "name": "과학기술정보통신부 개인기초연구",
+      "kind": "notice",
+      "enabled": true,
+      "domains": [
+        "msit.go.kr"
+      ],
+      "format": "hwpx",
+      "discovery_parser": "msit_listing",
+      "discovery_link_pattern": "/bbs/view\\.do\\?",
+      "discovery_keywords": [
+        "연구",
+        "공모",
+        "지원"
+      ],
+      "note": "2027년도 개인연구 1차. 공식 HWPX 추출, 목록 제목은 JS 문자열에서 읽음",
+      "url_ref": "msit_url",
+      "discovery_url_ref": "msit_discovery_url",
+      "attachment_url_ref": "msit_attachment_url"
+    },
+    {
+      "id": "moe",
+      "name": "교육부",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "moe.go.kr"
+      ],
+      "note": "이공·인문사회 개별사업을 구분. 현재 자동수집 미설정",
+      "url_ref": "moe_url"
+    },
+    {
+      "id": "iris",
+      "name": "IRIS 사업공고",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "iris.go.kr"
+      ],
+      "note": "연구자 제출과 기관승인 마감 구분. 현재 자동수집 미설정",
+      "url_ref": "iris_url"
+    },
+    {
+      "id": "ntis",
+      "name": "NTIS 국가R&D 통합공고",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "ntis.go.kr"
+      ],
+      "note": "탐색 후 원공고로 확인. 현재 자동수집 미설정",
+      "url_ref": "ntis_url"
+    },
+    {
+      "id": "iitp",
+      "name": "정보통신기획평가원",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "iitp.kr"
+      ],
+      "note": "AI·SW·ICT RFP별 참여조건. 동적 목록 수집기는 아직 미구현",
+      "url_ref": "iitp_url"
+    },
+    {
+      "id": "nfec",
+      "name": "국가연구시설장비진흥센터",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "nfec.go.kr"
+      ],
+      "note": "연구시설·장비 관련 지원. 현재 자동수집 미설정",
+      "url_ref": "nfec_url"
+    },
+    {
+      "id": "university",
+      "name": "소속 대학 연구처·산학협력단",
+      "url": "",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [],
+      "note": "사용자의 실제 대학 공지 URL을 입력해야 함. 대학 내부마감은 별도 확인"
+    },
+    {
+      "id": "samsung_science",
+      "name": "삼성미래기술육성재단 Science",
+      "kind": "notice",
+      "enabled": true,
+      "domains": [
+        "samsungstf.org"
+      ],
+      "content_class": "content_wrap",
+      "note": "수리과학 포함 기초연구. 2027 상·하반기 일정 공개",
+      "url_ref": "samsung_science_url"
+    },
+    {
+      "id": "samsung_technology",
+      "name": "삼성전자 미래기술육성센터 Technology",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "samsungstf.org"
+      ],
+      "note": "소재·ICT. 원문의 연도·요일 충돌 확인 필요",
+      "url_ref": "samsung_technology_url"
+    },
+    {
+      "id": "posco",
+      "name": "포스코청암재단",
+      "kind": "notice",
+      "enabled": true,
+      "domains": [
+        "postf.org"
+      ],
+      "content_class": "nxb-view",
+      "image_notice": true,
+      "discovery_link_pattern": "/news/notice/\\d+",
+      "discovery_keywords": [
+        "펠로십",
+        "연구",
+        "선발"
+      ],
+      "note": "제18기 모집. 핵심 조건은 이미지 포스터에 있어 HTML 텍스트만으로 전체 추출 불가",
+      "drop_view_count": true,
+      "url_ref": "posco_url",
+      "discovery_url_ref": "posco_discovery_url"
+    },
+    {
+      "id": "asan",
+      "name": "아산사회복지재단",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "asanfoundation.or.kr"
+      ],
+      "note": "학술연구지원 지정 주제 확인. 현재 자동수집 미설정",
+      "url_ref": "asan_url"
+    },
+    {
+      "id": "asan_nanum",
+      "name": "아산나눔재단",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "asan-nanum.org"
+      ],
+      "note": "창업·사회혁신 중심. 일반 기초연구비와 구분. 현재 자동수집 미설정",
+      "url_ref": "asan_nanum_url"
+    },
+    {
+      "id": "sanhak",
+      "name": "산학협동재단",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "sanhakfund.or.kr"
+      ],
+      "note": "학술연구비·기관추천. 현재 자동수집 미설정",
+      "url_ref": "sanhak_url"
+    },
+    {
+      "id": "amore",
+      "name": "아모레퍼시픽재단",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "ascf.amorepacific.co.kr"
+      ],
+      "note": "인문학·종료사업 구분. 현재 자동수집 미설정",
+      "url_ref": "amore_url"
+    },
+    {
+      "id": "kiise",
+      "name": "한국정보과학회",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "kiise.or.kr"
+      ],
+      "note": "외부 공고 재게시·시상·학술대회 구분. 현재 자동수집 미설정",
+      "url_ref": "kiise_url"
+    },
+    {
+      "id": "kiise_ai",
+      "name": "한국정보과학회 인공지능 소사이어티",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "aisociety.kr"
+      ],
+      "note": "KIISE Artificial Intelligence Society. 현재 자동수집 미설정",
+      "url_ref": "kiise_ai_url"
+    },
+    {
+      "id": "aiassociation",
+      "name": "한국인공지능학회",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "aiassociation.kr"
+      ],
+      "note": "KIISE 소사이어티·KORAIA와 별도 조직. 현재 자동수집 미설정",
+      "url_ref": "aiassociation_url"
+    },
+    {
+      "id": "koraia",
+      "name": "한국인공지능협회",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "koraia.org"
+      ],
+      "note": "기업·산학협력 대상 여부 확인. 현재 자동수집 미설정",
+      "url_ref": "koraia_url"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon Research Awards",
+      "kind": "notice",
+      "enabled": true,
+      "domains": [
+        "amazon.science"
+      ],
+      "content_class": "ArticlePage-mainContent",
+      "discovery_link_pattern": "/research-awards/(?:call-for-proposals/|latest-news/)",
+      "discovery_keywords": [
+        "proposal",
+        "research",
+        "award",
+        "reasoning",
+        "agentic"
+      ],
+      "supporting_sources": [
+        {
+          "content_class": "ArticlePage-mainContent",
+          "url_ref": "amazon_supporting_1"
+        },
+        {
+          "content_class": "SectionPage-main",
+          "url_ref": "amazon_supporting_2"
+        }
+      ],
+      "note": "2026 가을 공모. 연장 공지·Pacific 시간대를 유지. 공식 자격규정·FAQ 함께 수집",
+      "url_ref": "amazon_url",
+      "discovery_url_ref": "amazon_discovery_url"
+    },
+    {
+      "id": "google_gara",
+      "name": "Google Academic Research Awards",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "research.google"
+      ],
+      "note": "현행 개별 RFP 확인. 옛 Research Scholar 조건 복사 금지. 현재 자동수집 미설정",
+      "url_ref": "google_gara_url"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA Academic Grant",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "nvidia.com"
+      ],
+      "note": "컴퓨팅·소프트웨어 지원. 2026-11-06 조회 시 신규 미접수. 현재 자동수집 미설정",
+      "url_ref": "nvidia_url"
+    },
+    {
+      "id": "site_semiconductor_samsung_com",
+      "name": "Samsung Advanced Institute of Technology",
+      "url_ref": "samsung_gro_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "semiconductor.samsung.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_amd_com",
+      "name": "AMD University Program",
+      "url_ref": "amd_ai_hpc_cluster_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "amd.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_support_google_com",
+      "name": "Google Cloud",
+      "url_ref": "google_cloud_research_credits_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "support.google.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_aws_amazon_com",
+      "name": "Amazon Web Services",
+      "url_ref": "aws_cloud_credit_research_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "aws.amazon.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_microsoft_com",
+      "name": "Microsoft Research",
+      "url_ref": "microsoft_research_fellowship_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "microsoft.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_anthropic_com",
+      "name": "Anthropic",
+      "url_ref": "anthropic_ai_for_science_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "anthropic.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_support_claude_com",
+      "name": "Anthropic",
+      "url_ref": "anthropic_external_researcher_access_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "support.claude.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_grants_openai_com",
+      "name": "OpenAI",
+      "url_ref": "openai_researcher_access_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "grants.openai.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_research_adobe_com",
+      "name": "Adobe Research",
+      "url_ref": "adobe_global_collaboration_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "research.adobe.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_research_cisco_com",
+      "name": "Cisco Research",
+      "url_ref": "cisco_semiconductor_reliability_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "research.cisco.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_hyundaimotorgroup_com",
+      "name": "현대자동차그룹 / 현대엔지비",
+      "url_ref": "hyundai_future_technology_rfp_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "hyundaimotorgroup.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_developer_meta_com",
+      "name": "Meta",
+      "url_ref": "meta_llama_impact_grants_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "developer.meta.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_research_ibm_com",
+      "name": "IBM Research",
+      "url_ref": "ibm_faculty_awards_watch_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "research.ibm.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_intel_com",
+      "name": "Intel",
+      "url_ref": "intel_rising_star_watch_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "intel.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_oracle_com",
+      "name": "Oracle",
+      "url_ref": "oracle_research_fellows_excluded_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "oracle.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_sony_com",
+      "name": "Sony Group",
+      "url_ref": "sony_research_award_excluded_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "sony.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_machinelearning_apple_com",
+      "name": "Apple",
+      "url_ref": "apple_scholars_phd_excluded_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "machinelearning.apple.com"
+      ],
+      "category": "corporate",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_bizinfo_go_kr",
+      "name": "과학기술정보통신부·정보통신기획평가원",
+      "url_ref": "gov_iitp_digital_international_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "bizinfo.go.kr"
+      ],
+      "category": "government",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_kiat_or_kr",
+      "name": "산업통상부·한국산업기술진흥원·독일 상대기관",
+      "url_ref": "gov_kiat_korea_germany_2plus2_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "kiat.or.kr"
+      ],
+      "category": "government",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_daad_korea_org",
+      "name": "한국연구재단·독일 DAAD",
+      "url_ref": "gov_nrf_daad_genko_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "daad-korea.org"
+      ],
+      "category": "government",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_srome_keit_re_kr",
+      "name": "산업통상부·한국산업기술기획평가원",
+      "url_ref": "gov_keit_semiconductor_rd_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "srome.keit.re.kr"
+      ],
+      "category": "government",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_kma_go_kr",
+      "name": "기상청·국립기상과학원",
+      "url_ref": "gov_kma_ai_weather_foundation_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "kma.go.kr"
+      ],
+      "category": "government",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_kwater_or_kr",
+      "name": "기후에너지환경부·한국환경산업기술원",
+      "url_ref": "gov_keiti_climate_water_rd_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "kwater.or.kr"
+      ],
+      "category": "government",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_ksc_re_kr",
+      "name": "한국과학기술정보연구원·국가슈퍼컴퓨팅센터",
+      "url_ref": "gov_kisti_hpc_resources_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "ksc.re.kr"
+      ],
+      "category": "government",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_nipa_kr",
+      "name": "과학기술정보통신부·정보통신산업진흥원",
+      "url_ref": "gov_nipa_advanced_gpu_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "nipa.kr"
+      ],
+      "category": "government",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_hi_paris_fr",
+      "name": "Hi! PARIS Cluster 2030",
+      "url_ref": "intl_hi_paris_visiting_chairs_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "hi-paris.fr"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_humboldt_foundation_de",
+      "name": "Alexander von Humboldt Foundation",
+      "url_ref": "intl_humboldt_experienced_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "humboldt-foundation.de"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_jsps_go_jp",
+      "name": "Japan Society for the Promotion of Science",
+      "url_ref": "intl_jsps_invitational_short_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "jsps.go.jp"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_research_and_innovation_ec_europa_eu",
+      "name": "European Commission",
+      "url_ref": "intl_horizon_pillar_ii_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "research-and-innovation.ec.europa.eu"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_erc_europa_eu",
+      "name": "European Research Council",
+      "url_ref": "intl_erc_starting_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "erc.europa.eu"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_marie_sklodowska_curie_actions_ec_europa_eu",
+      "name": "European Commission / Research Executive Agency",
+      "url_ref": "intl_msca_european_pf_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "marie-sklodowska-curie-actions.ec.europa.eu"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_fulbright_or_kr",
+      "name": "한미교육위원단 / Fulbright Korea",
+      "url_ref": "intl_fulbright_korea_research_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "fulbright.or.kr"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_research_in_germany_org",
+      "name": "German Academic Exchange Service",
+      "url_ref": "intl_daad_research_stays_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "research-in-germany.org"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_dfg_de",
+      "name": "Deutsche Forschungsgemeinschaft",
+      "url_ref": "intl_dfg_initiation_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "dfg.de"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_mfo_de",
+      "name": "Mathematisches Forschungsinstitut Oberwolfach",
+      "url_ref": "visit_mfo_research_fellows_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "mfo.de"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_ias_edu",
+      "name": "Institute for Advanced Study, Princeton",
+      "url_ref": "visit_ias_membership_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "ias.edu"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_mis_mpg_de",
+      "name": "Max Planck Institute for Mathematics in the Sciences, Leipzig",
+      "url_ref": "visit_mpi_mis_faculty_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "mis.mpg.de"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_imsi_institute",
+      "name": "Institute for Mathematical and Statistical Innovation, University of Chicago",
+      "url_ref": "visit_imsi_traffic_2027_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "imsi.institute"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_ipam_ucla_edu",
+      "name": "Institute for Pure and Applied Mathematics, UCLA",
+      "url_ref": "visit_ipam_ai_materials_2027_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "ipam.ucla.edu"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_icerm_brown_edu",
+      "name": "ICERM, Brown University",
+      "url_ref": "visit_icerm_fall_2027_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "icerm.brown.edu"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_icms_ac_uk",
+      "name": "International Centre for Mathematical Sciences, Edinburgh",
+      "url_ref": "visit_icms_rig_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "icms.ac.uk"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_cirm_fbk_eu",
+      "name": "CIRM, Fondazione Bruno Kessler, Trento",
+      "url_ref": "visit_cirm_trento_pairs_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "cirm.fbk.eu"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_indico_math_cnrs_fr",
+      "name": "Institut Henri Poincaré / CNRS",
+      "url_ref": "visit_ihp_research_paris_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "indico.math.cnrs.fr"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_kurims_kyoto_u_ac_jp",
+      "name": "Research Institute for Mathematical Sciences, Kyoto University",
+      "url_ref": "visit_rims_type_b_2027_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "kurims.kyoto-u.ac.jp"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_proposals_birs_ca",
+      "name": "Banff International Research Station",
+      "url_ref": "visit_birs_research_teams_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "proposals.birs.ca"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_slmath_org",
+      "name": "Simons Laufer Mathematical Sciences Institute",
+      "url_ref": "visit_slmath_research_membership_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "slmath.org"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_royalsociety_org",
+      "name": "The Royal Society",
+      "url_ref": "intl_royal_international_exchanges_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "royalsociety.org"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_pims_math_ca",
+      "name": "Pacific Institute for the Mathematical Sciences",
+      "url_ref": "intl_pims_crg_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "pims.math.ca"
+      ],
+      "category": "visiting_math",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_simonsfoundation_org",
+      "name": "Simons Foundation",
+      "url_ref": "intl_simons_collaboration_mps_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "simonsfoundation.org"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_hfsp_org",
+      "name": "Human Frontier Science Program",
+      "url_ref": "intl_hfsp_research_grants_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "hfsp.org"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_mitacs_ca",
+      "name": "Mitacs",
+      "url_ref": "intl_mitacs_gra_supervision_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "mitacs.ca"
+      ],
+      "category": "international",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_renaissancephilanthropy_org",
+      "name": "Renaissance Philanthropy · XTX Markets",
+      "url_ref": "ai_for_math_seed_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "renaissancephilanthropy.org"
+      ],
+      "category": "foundation",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_ai2050_schmidtsciences_org",
+      "name": "Schmidt Sciences",
+      "url_ref": "schmidt_ai2050_early_career_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "ai2050.schmidtsciences.org"
+      ],
+      "category": "foundation",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "site_os4science_org",
+      "name": "Open Source for Science Fund · Renaissance Philanthropy",
+      "url_ref": "os4science_software_future_page",
+      "kind": "notice",
+      "enabled": false,
+      "domains": [
+        "os4science.org"
+      ],
+      "category": "foundation",
+      "note": "확장 조사에서 확인한 지원 경로. 자동수집 미설정. 공고별 자격·일정은 후보 자료에서 관리합니다."
+    },
+    {
+      "id": "hibrain",
+      "name": "하이브레인넷 연구지원 정보",
+      "kind": "listing",
+      "enabled": false,
+      "domains": [
+        "hibrain.net"
+      ],
+      "collection_mode": "search_only",
+      "url_ref": "hibrain_homepage",
+      "note": "공개 검색 결과로 연구지원 공고를 탐색합니다. 직접 자동수집은 하지 않습니다. 2026-11-08 robots.txt와 접근 제한 확인."
+    }
+  ],
+  "pages": [
+    {
+      "id": "nrf_url",
+      "source_id": "nrf",
+      "title": "한국연구재단 · listing",
+      "kind": "listing",
+      "url": "https://www.nrf.re.kr/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "msit_url",
+      "source_id": "msit",
+      "title": "과학기술정보통신부 개인기초연구 · notice",
+      "kind": "notice",
+      "url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=100&mId=311&mPid=121&nttSeqNo=3186911&sCode=user",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_young_infrastructure",
+        "gov_nrf_global_matching_dfg",
+        "gov_nrf_hanwoomul_replacement",
+        "gov_nrf_personal_basic_blocked",
+        "gov_nrf_basic_research_laboratory"
+      ]
+    },
+    {
+      "id": "msit_discovery_url",
+      "source_id": "msit",
+      "title": "과학기술정보통신부 개인기초연구 · listing",
+      "kind": "listing",
+      "url": "https://www.msit.go.kr/bbs/list.do?mId=311&mPid=121&sCode=user",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "msit_attachment_url",
+      "source_id": "msit",
+      "title": "과학기술정보통신부 개인기초연구 · attachment",
+      "kind": "attachment",
+      "url": "https://www.msit.go.kr/ssm/file/fileDown.do?atchFileNo=55534&fileOrd=3&fileBtn=A",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_young_infrastructure",
+        "gov_nrf_global_matching_dfg",
+        "gov_nrf_hanwoomul_replacement",
+        "gov_nrf_personal_basic_blocked"
+      ]
+    },
+    {
+      "id": "moe_url",
+      "source_id": "moe",
+      "title": "교육부 · listing",
+      "kind": "listing",
+      "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=72761&m=020502&s=moe",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "iris_url",
+      "source_id": "iris",
+      "title": "IRIS 사업공고 · listing",
+      "kind": "listing",
+      "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmBtinSituListView.do",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "ntis_url",
+      "source_id": "ntis",
+      "title": "NTIS 국가R&D 통합공고 · listing",
+      "kind": "listing",
+      "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/mng.do",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "iitp_url",
+      "source_id": "iitp",
+      "title": "정보통신기획평가원 · listing",
+      "kind": "listing",
+      "url": "https://www.iitp.kr/web/index.do",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "nfec_url",
+      "source_id": "nfec",
+      "title": "국가연구시설장비진흥센터 · listing",
+      "kind": "listing",
+      "url": "https://www.nfec.go.kr/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "samsung_science_url",
+      "source_id": "samsung_science",
+      "title": "삼성미래기술육성재단 Science · notice",
+      "kind": "notice",
+      "url": "https://samsungstf.org/ssrfPr/program/basic.do",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "samsung_science_2027"
+      ]
+    },
+    {
+      "id": "samsung_technology_url",
+      "source_id": "samsung_technology",
+      "title": "삼성전자 미래기술육성센터 Technology · notice",
+      "kind": "notice",
+      "url": "https://samsungstf.org/ssrfPr/program/material.do",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "samsung_technology_2027"
+      ]
+    },
+    {
+      "id": "posco_url",
+      "source_id": "posco",
+      "title": "포스코청암재단 · notice",
+      "kind": "notice",
+      "url": "https://www.postf.org/news/notice/1001068",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "posco_science_fellowship"
+      ]
+    },
+    {
+      "id": "posco_discovery_url",
+      "source_id": "posco",
+      "title": "포스코청암재단 · listing",
+      "kind": "listing",
+      "url": "https://www.postf.org/news/notice",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "asan_url",
+      "source_id": "asan",
+      "title": "아산사회복지재단 · listing",
+      "kind": "listing",
+      "url": "https://www.asanfoundation.or.kr/af/foundation/notice/afFoundationNoticeList.do",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "asan_nanum_url",
+      "source_id": "asan_nanum",
+      "title": "아산나눔재단 · listing",
+      "kind": "listing",
+      "url": "https://asan-nanum.org/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "sanhak_url",
+      "source_id": "sanhak",
+      "title": "산학협동재단 · listing",
+      "kind": "listing",
+      "url": "https://www.sanhakfund.or.kr/client/board/notice_list.asp",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "amore_url",
+      "source_id": "amore",
+      "title": "아모레퍼시픽재단 · listing",
+      "kind": "listing",
+      "url": "https://ascf.amorepacific.co.kr/notice.do",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "kiise_url",
+      "source_id": "kiise",
+      "title": "한국정보과학회 · listing",
+      "kind": "listing",
+      "url": "https://www.kiise.or.kr/academy/board/itnewsList.fa?MENU_ID=080300",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "kiise_ai_url",
+      "source_id": "kiise_ai",
+      "title": "한국정보과학회 인공지능 소사이어티 · listing",
+      "kind": "listing",
+      "url": "https://aisociety.kr/bbs/board.php?bo_table=05_01",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "aiassociation_url",
+      "source_id": "aiassociation",
+      "title": "한국인공지능학회 · listing",
+      "kind": "listing",
+      "url": "https://www.aiassociation.kr/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "koraia_url",
+      "source_id": "koraia",
+      "title": "한국인공지능협회 · listing",
+      "kind": "listing",
+      "url": "https://koraia.org/default/",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "amazon_url",
+      "source_id": "amazon",
+      "title": "Amazon Research Awards · notice",
+      "kind": "notice",
+      "url": "https://www.amazon.science/research-awards/latest-news/amazon-research-awards-opens-fall-2026-call-for-proposals",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "amazon_ara_agentic_ai_fall_2026",
+        "amazon_ara_automated_reasoning_fall_2026"
+      ]
+    },
+    {
+      "id": "amazon_discovery_url",
+      "source_id": "amazon",
+      "title": "Amazon Research Awards · listing",
+      "kind": "listing",
+      "url": "https://www.amazon.science/research-awards/call-for-proposals",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "amazon_supporting_1",
+      "source_id": "amazon",
+      "title": "Amazon Research Awards · 보조근거 1",
+      "kind": "supporting",
+      "url": "https://www.amazon.science/research-awards/program-rules",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "amazon_ara_agentic_ai_fall_2026",
+        "amazon_ara_automated_reasoning_fall_2026",
+        "amazon_build_trainium_fall_2026"
+      ]
+    },
+    {
+      "id": "amazon_supporting_2",
+      "source_id": "amazon",
+      "title": "Amazon Research Awards · 보조근거 2",
+      "kind": "supporting",
+      "url": "https://www.amazon.science/research-awards/frequently-asked-questions",
+      "checked_on": "2026-11-06"
+    },
+    {
+      "id": "google_gara_url",
+      "source_id": "google_gara",
+      "title": "Google Academic Research Awards · notice",
+      "kind": "notice",
+      "url": "https://research.google/programs-and-events/google-academic-research-awards/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "google_gara"
+      ]
+    },
+    {
+      "id": "nvidia_url",
+      "source_id": "nvidia",
+      "title": "NVIDIA Academic Grant · notice",
+      "kind": "notice",
+      "url": "https://www.nvidia.com/en-us/industries/higher-education-research/academic-grant-program/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "nvidia_academic_grant"
+      ]
+    },
+    {
+      "id": "samsung_gro_page",
+      "source_id": "site_semiconductor_samsung_com",
+      "title": "Samsung Global Research Outreach (GRO)",
+      "kind": "program",
+      "url": "https://semiconductor.samsung.com/sait/event/global-research-outreach/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "samsung_gro"
+      ]
+    },
+    {
+      "id": "sanhak_foundation_research_page",
+      "source_id": "sanhak",
+      "title": "산학협동재단 학술연구비 지원",
+      "kind": "program",
+      "url": "https://www.sanhakfund.or.kr/client/business/business.asp",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "sanhak_foundation_research"
+      ]
+    },
+    {
+      "id": "sanhak_foundation_research_evidence_1",
+      "source_id": "sanhak",
+      "title": "산학협동재단 학술연구비 지원 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.sanhakfund.or.kr/client/board/notice_view.asp?cate=&cpage=1&sidx=288",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "sanhak_foundation_research"
+      ]
+    },
+    {
+      "id": "sanhak_foundation_research_evidence_2",
+      "source_id": "sanhak",
+      "title": "산학협동재단 학술연구비 지원 · 공식 근거 2",
+      "kind": "evidence",
+      "url": "https://www.sanhakfund.or.kr/client/board/notice_view.asp?cate=&cpage=1&sidx=294",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "sanhak_foundation_research"
+      ]
+    },
+    {
+      "id": "asan_academic_research_page",
+      "source_id": "asan",
+      "title": "아산사회복지재단 학술연구지원",
+      "kind": "program",
+      "url": "https://www.asanfoundation.or.kr/af/foundation/notice/afFoundationNoticeDetail.do?idx=11292&noticeTypeClsf=N",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "asan_academic_research"
+      ]
+    },
+    {
+      "id": "asan_academic_research_evidence_1",
+      "source_id": "asan",
+      "title": "아산사회복지재단 학술연구지원 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.asanfoundation.or.kr/af/file/download.do?fileId=F000000648588_UcBWYM",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "asan_academic_research"
+      ]
+    },
+    {
+      "id": "amazon_ara_agentic_ai_fall_2026_page",
+      "source_id": "amazon",
+      "title": "Amazon Research Awards — Agentic AI, Fall 2026",
+      "kind": "program",
+      "url": "https://www.amazon.science/research-awards/call-for-proposals/aws-agentic-ai-call-for-proposals-fall-2026",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "amazon_ara_agentic_ai_fall_2026"
+      ]
+    },
+    {
+      "id": "amazon_ara_automated_reasoning_fall_2026_page",
+      "source_id": "amazon",
+      "title": "Amazon Research Awards — Automated Reasoning, Fall 2026",
+      "kind": "program",
+      "url": "https://www.amazon.science/research-awards/call-for-proposals/automated-reasoning-call-for-proposals-fall-2026",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "amazon_ara_automated_reasoning_fall_2026"
+      ]
+    },
+    {
+      "id": "amazon_build_trainium_fall_2026_page",
+      "source_id": "amazon",
+      "title": "Build on Trainium — Agentic Recursive Improvement of Kernels & Frameworks",
+      "kind": "program",
+      "url": "https://www.amazon.science/research-awards/call-for-proposals/build-on-trainium-agentic-recursive-improvement-of-kernels-and-frameworks-call-for-proposals-fall-2026",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "amazon_build_trainium_fall_2026"
+      ]
+    },
+    {
+      "id": "amd_ai_hpc_cluster_page",
+      "source_id": "site_amd_com",
+      "title": "AMD University Program AI & HPC Cluster",
+      "kind": "program",
+      "url": "https://www.amd.com/en/corporate/university-program/ai-hpc-cluster.html",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "amd_ai_hpc_cluster"
+      ]
+    },
+    {
+      "id": "amd_ai_hpc_cluster_evidence_1",
+      "source_id": "site_amd_com",
+      "title": "AMD University Program AI & HPC Cluster · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.amd.com/en/corporate/university-program.html",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "amd_ai_hpc_cluster",
+        "amd_research_donation",
+        "amd_faculty_grants"
+      ]
+    },
+    {
+      "id": "google_cloud_research_credits_page",
+      "source_id": "site_support_google_com",
+      "title": "Google Cloud Research Credits",
+      "kind": "program",
+      "url": "https://support.google.com/google-cloud-higher-ed/answer/10724468?hl=en",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "google_cloud_research_credits"
+      ]
+    },
+    {
+      "id": "google_cloud_research_credits_evidence_1",
+      "source_id": "site_support_google_com",
+      "title": "Google Cloud Research Credits · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://support.google.com/google-cloud-higher-ed/answer/10324705?hl=en",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "google_cloud_research_credits"
+      ]
+    },
+    {
+      "id": "aws_cloud_credit_research_page",
+      "source_id": "site_aws_amazon_com",
+      "title": "AWS Cloud Credit for Research",
+      "kind": "program",
+      "url": "https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "aws_cloud_credit_research"
+      ]
+    },
+    {
+      "id": "microsoft_research_fellowship_page",
+      "source_id": "site_microsoft_com",
+      "title": "Microsoft Research Fellowship",
+      "kind": "program",
+      "url": "https://www.microsoft.com/en-us/research/academic-program/2026-microsoft-research-fellowship/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "microsoft_research_fellowship"
+      ]
+    },
+    {
+      "id": "google_gara_evidence_1",
+      "source_id": "google_gara",
+      "title": "Google Academic Research Awards (GARA) · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://research.google/programs-and-events/research-scholar-program/recipients/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "google_gara"
+      ]
+    },
+    {
+      "id": "google_gara_evidence_2",
+      "source_id": "google_gara",
+      "title": "Google Academic Research Awards (GARA) · 공식 근거 2",
+      "kind": "evidence",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/google-org/beyond-the-research-scholar-program-how-were-supporting-early-career-academics/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "google_gara"
+      ]
+    },
+    {
+      "id": "google_gara_evidence_3",
+      "source_id": "google_gara",
+      "title": "Google Academic Research Awards (GARA) · 공식 근거 3",
+      "kind": "evidence",
+      "url": "https://services.google.com/fh/files/misc/googleresearchscholarprogram2025.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "google_gara"
+      ]
+    },
+    {
+      "id": "google_carbon_removal_rnd_page",
+      "source_id": "google_gara",
+      "title": "Google Carbon Removal & Superpollutant Elimination R&D Awards",
+      "kind": "program",
+      "url": "https://research.google/programs-and-events/2026-google-carbon-removal-and-superpollutant-elimination-rd-awards/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "google_carbon_removal_rnd"
+      ]
+    },
+    {
+      "id": "anthropic_ai_for_science_page",
+      "source_id": "site_anthropic_com",
+      "title": "Anthropic AI for Science",
+      "kind": "program",
+      "url": "https://www.anthropic.com/news/expanding-support-for-scientists",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "anthropic_ai_for_science"
+      ]
+    },
+    {
+      "id": "anthropic_ai_for_science_evidence_1",
+      "source_id": "site_anthropic_com",
+      "title": "Anthropic AI for Science · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.anthropic.com/ai-for-science-program-rules",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "anthropic_ai_for_science"
+      ]
+    },
+    {
+      "id": "anthropic_external_researcher_access_page",
+      "source_id": "site_support_claude_com",
+      "title": "Anthropic External Researcher Access Program",
+      "kind": "program",
+      "url": "https://support.claude.com/en/articles/9125743-what-is-the-external-researcher-access-program",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "anthropic_external_researcher_access"
+      ]
+    },
+    {
+      "id": "openai_researcher_access_page",
+      "source_id": "site_grants_openai_com",
+      "title": "OpenAI Researcher Access Program",
+      "kind": "program",
+      "url": "https://grants.openai.com/prog/openai_researcher_access_program/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "openai_researcher_access"
+      ]
+    },
+    {
+      "id": "adobe_global_collaboration_page",
+      "source_id": "site_research_adobe_com",
+      "title": "Adobe Research Faculty Collaborations / Unrestricted Gifts",
+      "kind": "program",
+      "url": "https://research.adobe.com/collaborations/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "adobe_global_collaboration"
+      ]
+    },
+    {
+      "id": "adobe_dsra_excluded_page",
+      "source_id": "site_research_adobe_com",
+      "title": "Adobe Data Science Research Awards — 한국 소속 제외",
+      "kind": "program",
+      "url": "https://research.adobe.com/data-science-research-awards/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "adobe_dsra_excluded"
+      ]
+    },
+    {
+      "id": "cisco_semiconductor_reliability_page",
+      "source_id": "site_research_cisco_com",
+      "title": "Cisco Research Gifts — Semiconductor Reliability (RFP-15-97)",
+      "kind": "program",
+      "url": "https://research.cisco.com/open-rfps/semiconductor-reliability",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "cisco_semiconductor_reliability"
+      ]
+    },
+    {
+      "id": "cisco_semiconductor_reliability_evidence_1",
+      "source_id": "site_research_cisco_com",
+      "title": "Cisco Research Gifts — Semiconductor Reliability (RFP-15-97) · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://research.cisco.com/research-funding",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "cisco_semiconductor_reliability"
+      ]
+    },
+    {
+      "id": "cisco_semiconductor_reliability_evidence_2",
+      "source_id": "site_research_cisco_com",
+      "title": "Cisco Research Gifts — Semiconductor Reliability (RFP-15-97) · 공식 근거 2",
+      "kind": "evidence",
+      "url": "https://research.cisco.com/open-rfps",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "cisco_semiconductor_reliability"
+      ]
+    },
+    {
+      "id": "hyundai_future_technology_rfp_page",
+      "source_id": "site_hyundaimotorgroup_com",
+      "title": "현대자동차그룹 미래기술공모과제",
+      "kind": "program",
+      "url": "https://www.hyundaimotorgroup.com/ko/news/CONT0000000000191674",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "hyundai_future_technology_rfp"
+      ]
+    },
+    {
+      "id": "hyundai_future_technology_rfp_evidence_1",
+      "source_id": "site_hyundaimotorgroup_com",
+      "title": "현대자동차그룹 미래기술공모과제 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://oasis.hyundai-ngv.com",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "hyundai_future_technology_rfp"
+      ]
+    },
+    {
+      "id": "meta_llama_impact_grants_page",
+      "source_id": "site_developer_meta_com",
+      "title": "Meta Llama Impact Grants",
+      "kind": "program",
+      "url": "https://developer.meta.com/ai/llama-impact-grants/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "meta_llama_impact_grants"
+      ]
+    },
+    {
+      "id": "meta_llama_impact_grants_evidence_1",
+      "source_id": "site_developer_meta_com",
+      "title": "Meta Llama Impact Grants · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://ai.meta.com/llama/llama-impact-grants/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "meta_llama_impact_grants"
+      ]
+    },
+    {
+      "id": "ibm_faculty_awards_watch_page",
+      "source_id": "site_research_ibm_com",
+      "title": "IBM Faculty Awards / Academic Research Collaboration",
+      "kind": "program",
+      "url": "https://research.ibm.com/university/awards/pdfs/IBM_AWARDS_PROGRAM_BROCHURE.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "ibm_faculty_awards_watch"
+      ]
+    },
+    {
+      "id": "ibm_faculty_awards_watch_evidence_1",
+      "source_id": "site_research_ibm_com",
+      "title": "IBM Faculty Awards / Academic Research Collaboration · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://research.ibm.com/labs/yorktown-heights/ibm-academic-awards-program",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "ibm_faculty_awards_watch"
+      ]
+    },
+    {
+      "id": "intel_rising_star_watch_page",
+      "source_id": "site_intel_com",
+      "title": "Intel Rising Star Faculty Award",
+      "kind": "program",
+      "url": "https://www.intel.com/content/www/us/en/research/news/rising-star-award-2024.html",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intel_rising_star_watch"
+      ]
+    },
+    {
+      "id": "oracle_research_fellows_excluded_page",
+      "source_id": "site_oracle_com",
+      "title": "Oracle for Research Fellows — 한국 소속 제외",
+      "kind": "program",
+      "url": "https://www.oracle.com/a/ocom/docs/research/oracle-research-fellows-program-eligibilty-criteria.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "oracle_research_fellows_excluded"
+      ]
+    },
+    {
+      "id": "sony_research_award_excluded_page",
+      "source_id": "site_sony_com",
+      "title": "Sony Research Award Program — 한국 소속 제외",
+      "kind": "program",
+      "url": "https://www.sony.com/en/SonyInfo/research-award-program/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "sony_research_award_excluded"
+      ]
+    },
+    {
+      "id": "apple_scholars_phd_excluded_page",
+      "source_id": "site_machinelearning_apple_com",
+      "title": "Apple Scholars in AIML — 교수 본인 지원 제외",
+      "kind": "program",
+      "url": "https://machinelearning.apple.com/work-with-us",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "apple_scholars_phd_excluded"
+      ]
+    },
+    {
+      "id": "gov_nrf_young_infrastructure_evidence_2",
+      "source_id": "msit",
+      "title": "2027 신진연구자 인프라 지원 · 공식 근거 2",
+      "kind": "evidence",
+      "url": "https://www.nfec.go.kr/cop/bbs/BBSMSTR_000000000001/selectBoardArticle.do?bbsId=BBSMSTR_000000000001&nttId=11816",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_young_infrastructure"
+      ]
+    },
+    {
+      "id": "gov_nrf_basic_research_laboratory_evidence_1",
+      "source_id": "msit",
+      "title": "기초연구실(BRL) 공동연구팀 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=100&mId=311&mPid=121&nttSeqNo=3186344&sCode=user",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_basic_research_laboratory"
+      ]
+    },
+    {
+      "id": "gov_iitp_digital_columbus_page",
+      "source_id": "iris",
+      "title": "디지털콜럼버스 프로젝트(신진연구자 시드연구)",
+      "kind": "program",
+      "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=017398",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_iitp_digital_columbus"
+      ]
+    },
+    {
+      "id": "gov_iitp_digital_columbus_evidence_1",
+      "source_id": "iris",
+      "title": "디지털콜럼버스 프로젝트(신진연구자 시드연구) · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://msit.go.kr/bbs/view.do?bbsSeqNo=100&mId=311&mPid=121&nttSeqNo=3186367&sCode=user",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_iitp_digital_columbus",
+        "gov_iitp_ict_rd"
+      ]
+    },
+    {
+      "id": "gov_iitp_digital_columbus_evidence_2",
+      "source_id": "iris",
+      "title": "디지털콜럼버스 프로젝트(신진연구자 시드연구) · 공식 근거 2",
+      "kind": "evidence",
+      "url": "https://kisia.or.kr/bucket/uploads/2026/01/12/%5B%EB%B6%99%EC%9E%84%5D%20ict%20r%26d%20%EA%B8%B0%EC%88%A0%EC%82%AC%EC%97%85%ED%99%94%20%EB%B0%8F%20%EB%94%94%EC%A7%80%ED%84%B8%EC%BD%9C%EB%9F%BC%EB%B2%84%EC%8A%A4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B6%8C%EC%97%AD%EB%B3%84%20%EC%82%AC%EC%97%85%EC%84%A4%EB%AA%85%20%EC%95%88%EB%82%B4.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_iitp_digital_columbus"
+      ]
+    },
+    {
+      "id": "gov_iitp_itrc_page",
+      "source_id": "iris",
+      "title": "대학ICT연구센터(ITRC) 참여",
+      "kind": "program",
+      "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=017626",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_iitp_itrc"
+      ]
+    },
+    {
+      "id": "gov_iitp_itrc_evidence_1",
+      "source_id": "iris",
+      "title": "대학ICT연구센터(ITRC) 참여 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1253203",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_iitp_itrc"
+      ]
+    },
+    {
+      "id": "gov_iitp_digital_international_page",
+      "source_id": "site_bizinfo_go_kr",
+      "title": "디지털혁신기술국제공동연구",
+      "kind": "program",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121236",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_iitp_digital_international"
+      ]
+    },
+    {
+      "id": "gov_iitp_ict_voucher_page",
+      "source_id": "iris",
+      "title": "ICT전략융합 R&D바우처 — 대학 공동연구개발기관",
+      "kind": "program",
+      "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=017423&ancmPrg=ancmPre",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_iitp_ict_voucher"
+      ]
+    },
+    {
+      "id": "gov_iitp_ict_voucher_evidence_1",
+      "source_id": "iris",
+      "title": "ICT전략융합 R&D바우처 — 대학 공동연구개발기관 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=100&nttSeqNo=3186366&sCode=user",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_iitp_ict_voucher"
+      ]
+    },
+    {
+      "id": "gov_kiat_korea_germany_2plus2_page",
+      "source_id": "site_kiat_or_kr",
+      "title": "한독2+2 산학연 공동연구",
+      "kind": "program",
+      "url": "https://kiat.or.kr/front/board/boardContentsView.do?contents_id=2be926c84e9a4489bb8f962394330bca",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_kiat_korea_germany_2plus2"
+      ]
+    },
+    {
+      "id": "gov_kiat_bilateral_industrial_page",
+      "source_id": "site_kiat_or_kr",
+      "title": "산업기술국제협력 양자공동R&D(국가별 공동기술개발)",
+      "kind": "program",
+      "url": "https://www.kiat.or.kr/front/board/boardContentsView.do?MenuId=b159c9dac684471b87256f1e25404f5e&board_id=90&contents_id=978b507dc80648cda7082ca59f8c51e7",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_kiat_bilateral_industrial"
+      ]
+    },
+    {
+      "id": "gov_nrf_international_fast_2026_page",
+      "source_id": "msit",
+      "title": "2026 국제공동연구 신속지원 — AI데이터센터 광인터커넥트 광원 RFP",
+      "kind": "program",
+      "url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=100&mId=311&mPid=121&nttSeqNo=3186904&sCode=user",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_international_fast_2026"
+      ]
+    },
+    {
+      "id": "gov_nrf_international_fast_2026_evidence_1",
+      "source_id": "msit",
+      "title": "2026 국제공동연구 신속지원 — AI데이터센터 광인터커넥트 광원 RFP · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.msit.go.kr/ssm/file/fileDown.do?atchFileNo=55454&fileOrd=1&fileBtn=A",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_international_fast_2026"
+      ]
+    },
+    {
+      "id": "gov_nrf_nsf_ires_2026_page",
+      "source_id": "iris",
+      "title": "2026 한미 이공분야 학생인력교류(NSF IRES) 운영지원",
+      "kind": "program",
+      "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024477",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_nsf_ires_2026"
+      ]
+    },
+    {
+      "id": "gov_nrf_nsf_ires_2026_evidence_1",
+      "source_id": "iris",
+      "title": "2026 한미 이공분야 학생인력교류(NSF IRES) 운영지원 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280632",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_nsf_ires_2026"
+      ]
+    },
+    {
+      "id": "gov_nrf_eu_joint_page",
+      "source_id": "iris",
+      "title": "한-EU 공동연구지원(한국측 대응연구비 경로)",
+      "kind": "program",
+      "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=023777",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_eu_joint"
+      ]
+    },
+    {
+      "id": "gov_nrf_eu_joint_evidence_1",
+      "source_id": "iris",
+      "title": "한-EU 공동연구지원(한국측 대응연구비 경로) · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.msit.go.kr/bbs/view.do?bbsSeqNo=100&mId=311&mPid=121&nttSeqNo=3186909&sCode=user",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_eu_joint"
+      ]
+    },
+    {
+      "id": "gov_nrf_daad_genko_page",
+      "source_id": "site_daad_korea_org",
+      "title": "한독특별협력 NRF–DAAD(GEnKO) 연구자교류",
+      "kind": "program",
+      "url": "https://www.daad-korea.org/ko/search-scholarshiprogramm/faculty/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_daad_genko"
+      ]
+    },
+    {
+      "id": "gov_nrf_daad_genko_evidence_1",
+      "source_id": "site_daad_korea_org",
+      "title": "한독특별협력 NRF–DAAD(GEnKO) 연구자교류 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://eng.nrf.re.kr/page/62a7fecb-959a-4dcb-80ff-11dcd9913d1e?ac=view&boardKey=e0e1b6d7-f66f-4e5b-a69a-8a6e42ea8fb0&menuTypeCd=&pageNum=1&postKey=48b2046a-66c4-4f37-900d-849609cf2709&searchText=&searchType=",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nrf_daad_genko"
+      ]
+    },
+    {
+      "id": "gov_msit_university_startup_joint_page",
+      "source_id": "iris",
+      "title": "대학연구소·스타트업 공동혁신 R&D",
+      "kind": "program",
+      "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=018054",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_msit_university_startup_joint"
+      ]
+    },
+    {
+      "id": "gov_limit_breakthrough_2026_page",
+      "source_id": "iris",
+      "title": "2026 한계돌파R&D — AI칩 친환경2상냉각 등 지정도전문제",
+      "kind": "program",
+      "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024037",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_limit_breakthrough_2026"
+      ]
+    },
+    {
+      "id": "gov_limit_breakthrough_2026_evidence_1",
+      "source_id": "iris",
+      "title": "2026 한계돌파R&D — AI칩 친환경2상냉각 등 지정도전문제 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1280251",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_limit_breakthrough_2026"
+      ]
+    },
+    {
+      "id": "gov_ai_radio_underwater_2026_page",
+      "source_id": "iris",
+      "title": "2026 AI기반 전파예측·주파수간섭분석 — 수중통신채널 예측 RFP",
+      "kind": "program",
+      "url": "https://www.iris.go.kr/contents/retrieveBsnsAncmView.do?ancmId=024439",
+      "checked_on": "2026-11-07",
+      "candidate_ids": [
+        "gov_ai_radio_underwater_2026"
+      ]
+    },
+    {
+      "id": "gov_keit_semiconductor_rd_page",
+      "source_id": "site_srome_keit_re_kr",
+      "title": "반도체 산업기술개발 RFP군(설계·공정·패키징·민관공동연구)",
+      "kind": "program",
+      "url": "https://srome.keit.re.kr/srome/biz/perform/opnnPrpsl/retrieveTaskAnncmInfoView.do?ancmId=I17849&bsnsYy=2026&prgmId=XPG201040000",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_keit_semiconductor_rd"
+      ]
+    },
+    {
+      "id": "gov_keit_semiconductor_rd_evidence_1",
+      "source_id": "site_srome_keit_re_kr",
+      "title": "반도체 산업기술개발 RFP군(설계·공정·패키징·민관공동연구) · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.motir.go.kr/kor/article/ATCLf724eb567/212837/view?mno=&pageIndex=92",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_keit_semiconductor_rd"
+      ]
+    },
+    {
+      "id": "gov_keit_semiconductor_rd_evidence_2",
+      "source_id": "site_srome_keit_re_kr",
+      "title": "반도체 산업기술개발 RFP군(설계·공정·패키징·민관공동연구) · 공식 근거 2",
+      "kind": "evidence",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000117459",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_keit_semiconductor_rd"
+      ]
+    },
+    {
+      "id": "gov_kma_ai_weather_foundation_page",
+      "source_id": "site_kma_go_kr",
+      "title": "한국형 AI 기상·기후 파운데이션 모델 개발 — 컨소시엄·용역 경로",
+      "kind": "program",
+      "url": "https://www.kma.go.kr/kma/news/notice.jsp?bid=gongzi&mode=view&num=1193786",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_kma_ai_weather_foundation"
+      ]
+    },
+    {
+      "id": "gov_keiti_climate_water_rd_page",
+      "source_id": "site_kwater_or_kr",
+      "title": "기후변화 적응 수재해 관리 R&D(홍수예측·동적댐운영 공동연구)",
+      "kind": "program",
+      "url": "https://www.kwater.or.kr/kiwe/news/notiView.do?brdId=KW17&s_mid=2034&seq=139884",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_keiti_climate_water_rd"
+      ]
+    },
+    {
+      "id": "gov_keiti_climate_water_rd_evidence_1",
+      "source_id": "site_kwater_or_kr",
+      "title": "기후변화 적응 수재해 관리 R&D(홍수예측·동적댐운영 공동연구) · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://keiti.re.kr/site/keiti/mainB1.do",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_keiti_climate_water_rd"
+      ]
+    },
+    {
+      "id": "gov_kisti_hpc_resources_page",
+      "source_id": "site_ksc_re_kr",
+      "title": "KISTI 국가슈퍼컴퓨팅 R&D혁신지원(슈퍼컴퓨터·NEURON 자원)",
+      "kind": "program",
+      "url": "https://www.ksc.re.kr/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_kisti_hpc_resources"
+      ]
+    },
+    {
+      "id": "gov_kisti_hpc_resources_evidence_1",
+      "source_id": "site_ksc_re_kr",
+      "title": "KISTI 국가슈퍼컴퓨팅 R&D혁신지원(슈퍼컴퓨터·NEURON 자원) · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.ksc-hpc.kr/?linkId=100000437697651",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_kisti_hpc_resources"
+      ]
+    },
+    {
+      "id": "gov_nipa_advanced_gpu_page",
+      "source_id": "site_nipa_kr",
+      "title": "첨단GPU 활용지원 — 학계 포함 공모·베타서비스",
+      "kind": "program",
+      "url": "https://nipa.kr/home/2-2",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nipa_advanced_gpu"
+      ]
+    },
+    {
+      "id": "gov_nipa_advanced_gpu_evidence_1",
+      "source_id": "site_nipa_kr",
+      "title": "첨단GPU 활용지원 — 학계 포함 공모·베타서비스 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148960358",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nipa_advanced_gpu"
+      ]
+    },
+    {
+      "id": "gov_nipa_npu_resources_page",
+      "source_id": "site_nipa_kr",
+      "title": "고성능컴퓨팅 지원 — 대학 참여가능 NPU 지원",
+      "kind": "program",
+      "url": "https://www.nipa.kr/home/bsnsAll/7/nttList?bbsNo=1&bsnsDtlsIemNo=29&tab=3",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nipa_npu_resources"
+      ]
+    },
+    {
+      "id": "gov_nipa_npu_resources_evidence_1",
+      "source_id": "site_nipa_kr",
+      "title": "고성능컴퓨팅 지원 — 대학 참여가능 NPU 지원 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.bipa.kr/board/external/view?seq=84949",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nipa_npu_resources"
+      ]
+    },
+    {
+      "id": "gov_nipa_npu_resources_evidence_2",
+      "source_id": "site_nipa_kr",
+      "title": "고성능컴퓨팅 지원 — 대학 참여가능 NPU 지원 · 공식 근거 2",
+      "kind": "evidence",
+      "url": "https://djdrone.djtp.or.kr/attachFiles/board/0118/202604140920326851.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "gov_nipa_npu_resources"
+      ]
+    },
+    {
+      "id": "intl_hi_paris_visiting_chairs_page",
+      "source_id": "site_hi_paris_fr",
+      "title": "Hi! PARIS International Visiting Chairs 2026",
+      "kind": "program",
+      "url": "https://hi-paris.fr/open-calls/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_hi_paris_visiting_chairs"
+      ]
+    },
+    {
+      "id": "intl_humboldt_experienced_page",
+      "source_id": "site_humboldt_foundation_de",
+      "title": "Humboldt Research Fellowship — Experienced Researchers",
+      "kind": "program",
+      "url": "https://www.humboldt-foundation.de/en/apply/sponsorship-programmes/humboldt-research-fellowship",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_humboldt_experienced",
+        "excluded_humboldt_postdoc"
+      ]
+    },
+    {
+      "id": "intl_humboldt_experienced_evidence_1",
+      "source_id": "site_humboldt_foundation_de",
+      "title": "Humboldt Research Fellowship — Experienced Researchers · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.humboldt-foundation.de/fileadmin/Bewerben/Programme/Humboldt-Forschungsstipendium/humboldt-fellowship_programme_information.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_humboldt_experienced"
+      ]
+    },
+    {
+      "id": "intl_humboldt_experienced_evidence_2",
+      "source_id": "site_humboldt_foundation_de",
+      "title": "Humboldt Research Fellowship — Experienced Researchers · 공식 근거 2",
+      "kind": "evidence",
+      "url": "https://www.humboldt-foundation.de/fileadmin/Bewerben/Foerderung_waehrend_Aufenthalt/Forschungsstipendien_in_Deutschland/research_fellowships_guidelines.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_humboldt_experienced"
+      ]
+    },
+    {
+      "id": "intl_jsps_invitational_short_page",
+      "source_id": "site_jsps_go_jp",
+      "title": "JSPS Invitational Fellowship — Short-term FY2027",
+      "kind": "program",
+      "url": "https://www.jsps.go.jp/english/e-inv/application/index.html",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_jsps_invitational_short",
+        "intl_jsps_invitational_long"
+      ]
+    },
+    {
+      "id": "intl_jsps_invitational_short_evidence_1",
+      "source_id": "site_jsps_go_jp",
+      "title": "JSPS Invitational Fellowship — Short-term FY2027 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2027/2027_applicationguideline_e.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_jsps_invitational_short",
+        "intl_jsps_invitational_long",
+        "excluded_jsps_standard_postdoc"
+      ]
+    },
+    {
+      "id": "intl_jsps_invitational_short_evidence_2",
+      "source_id": "site_jsps_go_jp",
+      "title": "JSPS Invitational Fellowship — Short-term FY2027 · 공식 근거 2",
+      "kind": "evidence",
+      "url": "https://www.jsps.go.jp/english/e-inv/application/guideline.html",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_jsps_invitational_short"
+      ]
+    },
+    {
+      "id": "intl_horizon_pillar_ii_page",
+      "source_id": "site_research_and_innovation_ec_europa_eu",
+      "title": "Horizon Europe Pillar II 국제공동연구 컨소시엄",
+      "kind": "program",
+      "url": "https://research-and-innovation.ec.europa.eu/strategy/strategy-research-and-innovation/europe-world/international-cooperation/association-horizon-europe/korea_en",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_horizon_pillar_ii",
+        "intl_erc_starting",
+        "intl_erc_consolidator",
+        "intl_erc_synergy",
+        "intl_msca_european_pf",
+        "intl_msca_staff_exchanges"
+      ]
+    },
+    {
+      "id": "intl_horizon_pillar_ii_evidence_1",
+      "source_id": "site_research_and_innovation_ec_europa_eu",
+      "title": "Horizon Europe Pillar II 국제공동연구 컨소시엄 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://eur-lex.europa.eu/eli/agree_internation/2025/1532/oj/eng/pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_horizon_pillar_ii"
+      ]
+    },
+    {
+      "id": "intl_erc_starting_page",
+      "source_id": "site_erc_europa_eu",
+      "title": "ERC Starting Grant 2027 / 다음 회차",
+      "kind": "program",
+      "url": "https://erc.europa.eu/apply-grant/starting-grant",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_erc_starting"
+      ]
+    },
+    {
+      "id": "intl_erc_starting_evidence_1",
+      "source_id": "site_erc_europa_eu",
+      "title": "ERC Starting Grant 2027 / 다음 회차 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://erc.europa.eu/news-events/news/applying-erc-grant-2027-competitions-what-you-need-know",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_erc_starting",
+        "intl_erc_consolidator",
+        "intl_erc_synergy"
+      ]
+    },
+    {
+      "id": "intl_erc_consolidator_page",
+      "source_id": "site_erc_europa_eu",
+      "title": "ERC Consolidator Grant 2027",
+      "kind": "program",
+      "url": "https://erc.europa.eu/apply-grant/consolidator-grant",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_erc_consolidator"
+      ]
+    },
+    {
+      "id": "intl_erc_synergy_page",
+      "source_id": "site_erc_europa_eu",
+      "title": "ERC Synergy Grant 2027 — 한국 기관 PI 참여",
+      "kind": "program",
+      "url": "https://erc.europa.eu/apply-grant/synergy-grant",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_erc_synergy"
+      ]
+    },
+    {
+      "id": "intl_erc_synergy_evidence_3",
+      "source_id": "site_erc_europa_eu",
+      "title": "ERC Synergy Grant 2027 — 한국 기관 PI 참여 · 공식 근거 3",
+      "kind": "evidence",
+      "url": "https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/horizon/wp-call/2027/wp_horizon-erc-2027_en.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_erc_synergy"
+      ]
+    },
+    {
+      "id": "intl_msca_european_pf_page",
+      "source_id": "site_marie_sklodowska_curie_actions_ec_europa_eu",
+      "title": "MSCA European Postdoctoral Fellowships",
+      "kind": "program",
+      "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_msca_european_pf"
+      ]
+    },
+    {
+      "id": "intl_msca_european_pf_evidence_1",
+      "source_id": "site_marie_sklodowska_curie_actions_ec_europa_eu",
+      "title": "MSCA European Postdoctoral Fellowships · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://rea.ec.europa.eu/funding-and-grants/horizon-europe-marie-sklodowska-curie-actions/msca-postdoctoral-fellowships_en",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_msca_european_pf"
+      ]
+    },
+    {
+      "id": "intl_msca_staff_exchanges_page",
+      "source_id": "site_marie_sklodowska_curie_actions_ec_europa_eu",
+      "title": "MSCA Staff Exchanges 2027 — 국제 연구인력 교류",
+      "kind": "program",
+      "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/actions/staff-exchanges",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_msca_staff_exchanges"
+      ]
+    },
+    {
+      "id": "intl_msca_staff_exchanges_evidence_1",
+      "source_id": "site_marie_sklodowska_curie_actions_ec_europa_eu",
+      "title": "MSCA Staff Exchanges 2027 — 국제 연구인력 교류 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://marie-sklodowska-curie-actions.ec.europa.eu/whats-new/news/msca-opens-eu979-million-call-for-staff-exchanges",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_msca_staff_exchanges"
+      ]
+    },
+    {
+      "id": "intl_fulbright_korea_research_page",
+      "source_id": "site_fulbright_or_kr",
+      "title": "Fulbright Korea 교수 연구 — Early Career",
+      "kind": "program",
+      "url": "https://www.fulbright.or.kr/grant/research/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_fulbright_korea_research"
+      ]
+    },
+    {
+      "id": "intl_daad_research_stays_page",
+      "source_id": "site_research_in_germany_org",
+      "title": "DAAD Research Stays for University Academics and Scientists",
+      "kind": "program",
+      "url": "https://www.research-in-germany.org/en/research-funding/funding-programmes/daad-research-stays-for-university-academics-and-scientists.html",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_daad_research_stays"
+      ]
+    },
+    {
+      "id": "intl_daad_research_stays_evidence_1",
+      "source_id": "site_research_in_germany_org",
+      "title": "DAAD Research Stays for University Academics and Scientists · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.daad-korea.org/en/find-funding/scholarship-database/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_daad_research_stays"
+      ]
+    },
+    {
+      "id": "intl_dfg_initiation_page",
+      "source_id": "site_dfg_de",
+      "title": "DFG Initiation of International Collaboration",
+      "kind": "program",
+      "url": "https://www.dfg.de/en/research-funding/funding-opportunities/programmes/international-cooperation/initiation-international-collaboration",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_dfg_initiation"
+      ]
+    },
+    {
+      "id": "intl_dfg_initiation_evidence_1",
+      "source_id": "site_dfg_de",
+      "title": "DFG Initiation of International Collaboration · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.dfg.de/resource/blob/167376/1-813-en.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_dfg_initiation"
+      ]
+    },
+    {
+      "id": "visit_mfo_research_fellows_page",
+      "source_id": "site_mfo_de",
+      "title": "Oberwolfach Research Fellows — 기존 Research in Pairs",
+      "kind": "program",
+      "url": "https://www.mfo.de/scientific-program/longer-term/oberwolfach-research-fellows",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_mfo_research_fellows"
+      ]
+    },
+    {
+      "id": "visit_ias_membership_page",
+      "source_id": "site_ias_edu",
+      "title": "IAS School of Mathematics Membership 2027–2028",
+      "kind": "program",
+      "url": "https://www.ias.edu/math/apply/membership",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_ias_membership"
+      ]
+    },
+    {
+      "id": "visit_ias_membership_evidence_1",
+      "source_id": "site_ias_edu",
+      "title": "IAS School of Mathematics Membership 2027–2028 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.ias.edu/news/institute-advanced-study-invites-membership-applications-2027-28-academic-year",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_ias_membership"
+      ]
+    },
+    {
+      "id": "visit_ias_summer_collaborators_page",
+      "source_id": "site_ias_edu",
+      "title": "IAS Summer Collaborators Program 2027",
+      "kind": "program",
+      "url": "https://www.ias.edu/math/summercollaborators",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_ias_summer_collaborators"
+      ]
+    },
+    {
+      "id": "visit_mpi_mis_faculty_page",
+      "source_id": "site_mis_mpg_de",
+      "title": "Max Planck Institute MiS — Visiting Faculty / Guest Program",
+      "kind": "program",
+      "url": "https://www.mis.mpg.de/career/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_mpi_mis_faculty"
+      ]
+    },
+    {
+      "id": "visit_imsi_traffic_2027_page",
+      "source_id": "site_imsi_institute",
+      "title": "IMSI 2027 Modeling and Control of Vehicular Traffic and Transportation Systems",
+      "kind": "program",
+      "url": "https://www.imsi.institute/activities/modeling-and-control-of-vehicular-traffic-and-transportation-systems/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_imsi_traffic_2027"
+      ]
+    },
+    {
+      "id": "visit_ipam_ai_materials_2027_page",
+      "source_id": "site_ipam_ucla_edu",
+      "title": "IPAM Artificial Intelligence in Materials Science 2027",
+      "kind": "program",
+      "url": "https://www.ipam.ucla.edu/programs/long-programs/artificial-intelligence-in-materials-science/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_ipam_ai_materials_2027"
+      ]
+    },
+    {
+      "id": "visit_ipam_ai_materials_2027_evidence_1",
+      "source_id": "site_ipam_ucla_edu",
+      "title": "IPAM Artificial Intelligence in Materials Science 2027 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.ipam.ucla.edu/programs/long-programs/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_ipam_ai_materials_2027"
+      ]
+    },
+    {
+      "id": "visit_icerm_fall_2027_page",
+      "source_id": "site_icerm_brown_edu",
+      "title": "ICERM Fall 2027 Semester — Applied and Computational Complex Analysis",
+      "kind": "program",
+      "url": "https://icerm.brown.edu/program/semester_program/sp-f27",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_icerm_fall_2027"
+      ]
+    },
+    {
+      "id": "visit_icms_rig_page",
+      "source_id": "site_icms_ac_uk",
+      "title": "ICMS Research in Groups 2027/2028 / 다음 회차",
+      "kind": "program",
+      "url": "https://icms.ac.uk/fundings/research-in-groups-rigs/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_icms_rig"
+      ]
+    },
+    {
+      "id": "visit_cirm_trento_pairs_page",
+      "source_id": "site_cirm_fbk_eu",
+      "title": "CIRM Trento Research in Pairs 2027 / 다음 회차",
+      "kind": "program",
+      "url": "https://cirm.fbk.eu/research-in-pairs/call-for-research-in-pairs-2027",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_cirm_trento_pairs"
+      ]
+    },
+    {
+      "id": "visit_cirm_trento_pairs_evidence_1",
+      "source_id": "site_cirm_fbk_eu",
+      "title": "CIRM Trento Research in Pairs 2027 / 다음 회차 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://cirm.fbk.eu/research-in-pairs/research-in-pairs",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_cirm_trento_pairs"
+      ]
+    },
+    {
+      "id": "visit_ihp_research_paris_page",
+      "source_id": "site_indico_math_cnrs_fr",
+      "title": "IHP Research in Paris — 소그룹 공동연구",
+      "kind": "program",
+      "url": "https://indico.math.cnrs.fr/event/9422/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_ihp_research_paris"
+      ]
+    },
+    {
+      "id": "visit_ihp_research_paris_evidence_1",
+      "source_id": "site_indico_math_cnrs_fr",
+      "title": "IHP Research in Paris — 소그룹 공동연구 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.ihp.fr/fr/missions",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_ihp_research_paris"
+      ]
+    },
+    {
+      "id": "visit_rims_type_b_2027_page",
+      "source_id": "site_kurims_kyoto_u_ac_jp",
+      "title": "RIMS Joint Research Activity — Type B 2027",
+      "kind": "program",
+      "url": "https://www.kurims.kyoto-u.ac.jp/kyoten/en/kobo/2027bE/guidelines2027bE.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_rims_type_b_2027"
+      ]
+    },
+    {
+      "id": "visit_rims_type_b_2027_evidence_1",
+      "source_id": "site_kurims_kyoto_u_ac_jp",
+      "title": "RIMS Joint Research Activity — Type B 2027 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.kurims.kyoto-u.ac.jp/kyoten/en/call_for_proposals-1.html",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_rims_type_b_2027"
+      ]
+    },
+    {
+      "id": "visit_birs_research_teams_page",
+      "source_id": "site_proposals_birs_ca",
+      "title": "BIRS Research in Teams / Focused Research Groups",
+      "kind": "program",
+      "url": "https://proposals.birs.ca/guidelines",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_birs_research_teams"
+      ]
+    },
+    {
+      "id": "visit_birs_research_teams_evidence_1",
+      "source_id": "site_proposals_birs_ca",
+      "title": "BIRS Research in Teams / Focused Research Groups · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.birs.ca/programs/general-program-descriptions",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_birs_research_teams"
+      ]
+    },
+    {
+      "id": "visit_slmath_research_membership_page",
+      "source_id": "site_slmath_org",
+      "title": "SLMath Research Membership — 관련 학기 프로그램",
+      "kind": "program",
+      "url": "https://www.slmath.org/apply",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_slmath_research_membership"
+      ]
+    },
+    {
+      "id": "visit_slmath_research_membership_evidence_1",
+      "source_id": "site_slmath_org",
+      "title": "SLMath Research Membership — 관련 학기 프로그램 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.slmath.org/ckeditor_assets/attachments/2677/SLMath_Flyer_-_Fall_2025_SPDE_380_Membership_Web.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_slmath_research_membership"
+      ]
+    },
+    {
+      "id": "visit_slmath_research_membership_evidence_2",
+      "source_id": "site_slmath_org",
+      "title": "SLMath Research Membership — 관련 학기 프로그램 · 공식 근거 2",
+      "kind": "evidence",
+      "url": "https://www.slmath.org/ckeditor_assets/attachments/2614/SLMath_Flyer_-_Spring_2026_GDLG_365_Membership_Web.pdf",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "visit_slmath_research_membership"
+      ]
+    },
+    {
+      "id": "intl_royal_international_exchanges_page",
+      "source_id": "site_royalsociety_org",
+      "title": "Royal Society International Exchanges — Global",
+      "kind": "program",
+      "url": "https://www.royalsociety.org/grants/international-exchanges/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_royal_international_exchanges"
+      ]
+    },
+    {
+      "id": "intl_royal_wolfson_visiting_page",
+      "source_id": "site_royalsociety_org",
+      "title": "Royal Society Wolfson Visiting Fellowship",
+      "kind": "program",
+      "url": "https://www.royalsociety.org/grants/royal-society-wolfson-visiting-fellowship/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_royal_wolfson_visiting"
+      ]
+    },
+    {
+      "id": "intl_royal_wolfson_visiting_evidence_1",
+      "source_id": "site_royalsociety_org",
+      "title": "Royal Society Wolfson Visiting Fellowship · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.royalsociety.org/grants/application-dates/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_royal_wolfson_visiting"
+      ]
+    },
+    {
+      "id": "intl_pims_crg_page",
+      "source_id": "site_pims_math_ca",
+      "title": "PIMS Collaborative Research Groups",
+      "kind": "program",
+      "url": "https://pims.math.ca/programs/scientific/collaborative-research-groups/about-collaborative-research-groups",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_pims_crg"
+      ]
+    },
+    {
+      "id": "intl_pims_crg_evidence_1",
+      "source_id": "site_pims_math_ca",
+      "title": "PIMS Collaborative Research Groups · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.pims.math.ca/programs/scientific/scientific-proposals",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_pims_crg"
+      ]
+    },
+    {
+      "id": "intl_simons_collaboration_mps_page",
+      "source_id": "site_simonsfoundation_org",
+      "title": "Simons Collaborations in Mathematics and Physical Sciences 2028",
+      "kind": "program",
+      "url": "https://www.simonsfoundation.org/funding/simons-collaborations-in-mathematics-and-the-physical-sciences-2028/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_simons_collaboration_mps"
+      ]
+    },
+    {
+      "id": "intl_simons_collaboration_mps_evidence_1",
+      "source_id": "site_simonsfoundation_org",
+      "title": "Simons Collaborations in Mathematics and Physical Sciences 2028 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.simonsfoundation.org/funding/simons-collaborations-in-mathematics-and-the-physical-sciences-2028/faqs/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_simons_collaboration_mps"
+      ]
+    },
+    {
+      "id": "intl_simons_targeted_mps_page",
+      "source_id": "site_simonsfoundation_org",
+      "title": "Simons Targeted Grants in Mathematics and Physical Sciences",
+      "kind": "program",
+      "url": "https://www.simonsfoundation.org/grant/targeted-grants-in-mps/?tab=how-to-apply",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_simons_targeted_mps"
+      ]
+    },
+    {
+      "id": "intl_hfsp_research_grants_page",
+      "source_id": "site_hfsp_org",
+      "title": "HFSP Research Grants — 수학·AI × 기초생물학 국제팀",
+      "kind": "program",
+      "url": "https://www.hfsp.org/funding/hfsp-funding/research-grants",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_hfsp_research_grants"
+      ]
+    },
+    {
+      "id": "intl_mitacs_gra_supervision_page",
+      "source_id": "site_mitacs_ca",
+      "title": "Mitacs Globalink Research Award — 학생·박사후 공동지도 경로",
+      "kind": "program",
+      "url": "https://www.mitacs.ca/our-programs/globalink-research-award/",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "intl_mitacs_gra_supervision"
+      ]
+    },
+    {
+      "id": "excluded_jsps_standard_postdoc_evidence_1",
+      "source_id": "site_jsps_go_jp",
+      "title": "JSPS Postdoctoral Fellowship Standard FY2027 — 일반 연차 제외 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://www.jsps.go.jp/english/e-fellow/application.html",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "excluded_jsps_standard_postdoc"
+      ]
+    },
+    {
+      "id": "excluded_mfo_leibniz_page",
+      "source_id": "site_mfo_de",
+      "title": "Oberwolfach Leibniz Fellows — 일반 연차 제외",
+      "kind": "program",
+      "url": "https://www.mfo.de/scientific-program/longer-term/oberwolfach-leibniz-fellows",
+      "checked_on": "2026-11-06",
+      "candidate_ids": [
+        "excluded_mfo_leibniz"
+      ]
+    },
+    {
+      "id": "ai_for_math_seed_page",
+      "source_id": "site_renaissancephilanthropy_org",
+      "title": "AI for Math Fund — Seed Grants",
+      "kind": "program",
+      "url": "https://www.renaissancephilanthropy.org/ai-for-math-fund",
+      "checked_on": "2026-11-07",
+      "candidate_ids": [
+        "ai_for_math_seed",
+        "ai_for_math_annual"
+      ]
+    },
+    {
+      "id": "ai_for_math_seed_evidence_1",
+      "source_id": "site_renaissancephilanthropy_org",
+      "title": "AI for Math Fund — Seed Grants · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://docs.google.com/document/d/1WOTctEoNMOypKb3XB01pldDPHo2wN2ZFhZhjkXwOCc0/edit",
+      "checked_on": "2026-11-07",
+      "candidate_ids": [
+        "ai_for_math_seed"
+      ]
+    },
+    {
+      "id": "schmidt_ai2050_early_career_page",
+      "source_id": "site_ai2050_schmidtsciences_org",
+      "title": "Schmidt Sciences AI2050 Early Career Fellowship",
+      "kind": "program",
+      "url": "https://ai2050.schmidtsciences.org/fellows/",
+      "checked_on": "2026-11-07",
+      "candidate_ids": [
+        "schmidt_ai2050_early_career"
+      ]
+    },
+    {
+      "id": "schmidt_ai2050_early_career_evidence_1",
+      "source_id": "site_ai2050_schmidtsciences_org",
+      "title": "Schmidt Sciences AI2050 Early Career Fellowship · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://ai2050.schmidtsciences.org/hard-problems/",
+      "checked_on": "2026-11-07",
+      "candidate_ids": [
+        "schmidt_ai2050_early_career"
+      ]
+    },
+    {
+      "id": "os4science_software_future_page",
+      "source_id": "site_os4science_org",
+      "title": "Open Source for Science Fund — 과학 소프트웨어 차기 공모",
+      "kind": "program",
+      "url": "https://os4science.org/funding_opportunity/os4ls/",
+      "checked_on": "2026-11-07",
+      "candidate_ids": [
+        "os4science_software_future"
+      ]
+    },
+    {
+      "id": "os4science_software_future_evidence_1",
+      "source_id": "site_os4science_org",
+      "title": "Open Source for Science Fund — 과학 소프트웨어 차기 공모 · 공식 근거 1",
+      "kind": "evidence",
+      "url": "https://os4science.org/apply-for-funding/",
+      "checked_on": "2026-11-07",
+      "candidate_ids": [
+        "os4science_software_future"
+      ]
+    },
+    {
+      "id": "hibrain_homepage",
+      "source_id": "hibrain",
+      "title": "하이브레인넷",
+      "kind": "listing",
+      "url": "https://www.hibrain.net/",
+      "checked_on": "2026-11-08"
+    }
+  ]
+}

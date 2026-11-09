@@ -1,0 +1,4 @@
+# 기본 기능은 Python 3.10+ 표준 라이브러리로 동작합니다.
+# 설치할 필수 Python 패키지는 없습니다.
+# PDF 지원이 필요하면: python3 -m pip install -r requirements-pdf.txt
+# 새 CV 탐색 화면의 웹 검색: python3 -m pip install -r requirements-search.txt

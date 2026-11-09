@@ -1,0 +1,47 @@
+{
+  "basis": "2026-11-06 공식 출처 조사에 따른 참고 정보. 확정 접수 마감이 아닙니다.",
+  "items": [
+    {
+      "program": "정부 개인기초연구 1차",
+      "timing": "전년도 11월 공고·연말 접수",
+      "evidence_type": "확인한 2026·2027 두 회차의 이력",
+      "action": "새 회차 공고·세부요강 재확인",
+      "source_ref": "msit_url"
+    },
+    {
+      "program": "정부 개인기초연구 2차",
+      "timing": "2027년 3월 공고·4월 접수 계획",
+      "evidence_type": "2027 공식 추진계획, 일 단위 미확정",
+      "action": "2027년 3월 별도 공고 확인",
+      "source_ref": "msit_url"
+    },
+    {
+      "program": "삼성 Science",
+      "timing": "연중 상시접수·연 2회 심사",
+      "evidence_type": "공식 운영 안내",
+      "action": "해당 반기 심사대상 접수마감 확인",
+      "source_ref": "samsung_science_url"
+    },
+    {
+      "program": "산학협동재단 학술연구비",
+      "timing": "매년 3~4월경 공고",
+      "evidence_type": "기관의 공식 정기 사업안내",
+      "action": "소속기관 추천·내부마감 함께 확인",
+      "source_ref": "sanhak_foundation_research_page"
+    },
+    {
+      "program": "포스코사이언스펠로십",
+      "timing": "2026년 이력: 3~5월 접수",
+      "evidence_type": "단일 회차 이력. 다음 회차 미확인",
+      "action": "새 기수 공고의 임용경력 기준일 다시 확인",
+      "source_ref": "posco_url"
+    },
+    {
+      "program": "아산 학술연구지원",
+      "timing": "2026년 이력: 4~5월 접수",
+      "evidence_type": "단일 회차 이력. 다음 회차 미확인",
+      "action": "다음 회차 지정 연구주제·자격 확인",
+      "source_ref": "asan_academic_research_page"
+    }
+  ]
+}

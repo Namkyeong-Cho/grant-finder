@@ -1,0 +1,96 @@
+{
+  "checked_on": "2026-11-07",
+  "scope_note": "공개 지원기관 자료에 근거한 프로그램 목록입니다. 개인별 연구 적합도·신청자격·우선순위는 평가하지 않았습니다.",
+  "candidates": [
+    {
+      "id": "ai_for_math_seed",
+      "title": "AI for Math Fund — Seed Grants",
+      "sponsor": "Renaissance Philanthropy · XTX Markets",
+      "category": "foundation",
+      "support_type": "research_grant",
+      "route": "direct",
+      "availability": "rolling",
+      "fit": "conditional",
+      "fit_reason": "개인 프로필을 입력한 뒤 연구 적합도와 신청자격을 확인해야 합니다.",
+      "eligibility_summary": "전 세계 개인·팀·대학 등이 신청 가능. 최대 USD 100,000, 최대 12개월. 한국 소재 대학 연구자도 대상 범위입니다. 코드·데이터 공개 및 논문 preprint 공개 의무가 있으며 간접비는 총액의 10% 이내입니다.",
+      "personal_constraints": [],
+      "application_timing": "상시 접수·수시 심사. 공식 RFP는 접수 후 4주 이내 수락 여부 안내를 명시합니다. 고정 마감일은 없습니다.",
+      "deadline": null,
+      "deadline_timezone": null,
+      "next_action": "공식 공고에서 현재 모집 일정·지원 자격·신청 절차를 확인하십시오.",
+      "evidence_note": "공식 Seed Grants 항목과 연결된 April 2026 RFP·FAQ를 확인했습니다. 연례 대형 공모와 다른 상시 경로입니다.",
+      "checked_on": "2026-11-07",
+      "source_ref": "ai_for_math_seed_page",
+      "additional_source_refs": [
+        "ai_for_math_seed_evidence_1"
+      ]
+    },
+    {
+      "id": "ai_for_math_annual",
+      "title": "AI for Math Fund — Annual Grants 차기 회차",
+      "sponsor": "Renaissance Philanthropy · XTX Markets",
+      "category": "foundation",
+      "support_type": "research_grant",
+      "route": "direct",
+      "availability": "future_watch",
+      "fit": "conditional",
+      "fit_reason": "개인 프로필을 입력한 뒤 연구 적합도와 신청자격을 확인해야 합니다.",
+      "eligibility_summary": "2026 회차는 전 세계 개인·팀 대상, USD 100,000~1,000,000, 12~24개월 지원입니다. 차기 회차 조건은 미발표입니다.",
+      "personal_constraints": [],
+      "application_timing": "2026 회차: 3월 공고 → 3월 30일 23:59 PT 초록 마감 → 5월 초 본계획 초청 → 8월 결정 예정. 차기 날짜는 미발표이며 2026년 3월 이력을 감시 기준으로 사용합니다.",
+      "deadline": null,
+      "deadline_timezone": null,
+      "next_action": "공식 공고에서 현재 모집 일정·지원 자격·신청 절차를 확인하십시오.",
+      "evidence_note": "2026 공모 일정과 Seed FAQ의 연례 공모 마감·후속 지원 설명을 대조했습니다. 차기 날짜를 확정 일정으로 만들지 않았습니다.",
+      "checked_on": "2026-11-07",
+      "source_ref": "ai_for_math_seed_page",
+      "additional_source_refs": []
+    },
+    {
+      "id": "schmidt_ai2050_early_career",
+      "title": "Schmidt Sciences AI2050 Early Career Fellowship",
+      "sponsor": "Schmidt Sciences",
+      "category": "foundation",
+      "support_type": "fellowship",
+      "route": "institution",
+      "availability": "future_watch",
+      "fit": "conditional",
+      "fit_reason": "개인 프로필을 입력한 뒤 연구 적합도와 신청자격을 확인해야 합니다.",
+      "eligibility_summary": "전 세계 박사후연구원·정년보장 전 연구자 대상의 3년 프로젝트 지원입니다. 비공개 추천으로 선발하며 직접 신청은 없습니다. 공식 페이지에 개인별 지원액은 제시하지 않습니다.",
+      "personal_constraints": [],
+      "application_timing": "연례 기수 운영. 2026 Early Career 명단 공개, 차기 추천 일정·마감은 미공개입니다.",
+      "deadline": null,
+      "deadline_timezone": null,
+      "next_action": "공식 공고에서 현재 모집 일정·지원 자격·신청 절차를 확인하십시오.",
+      "evidence_note": "공식 Early Career 설명의 전 세계·pre-tenure·3년·closed nomination·no application을 확인했습니다. 공개 모집으로 표시하지 않았습니다.",
+      "checked_on": "2026-11-07",
+      "source_ref": "schmidt_ai2050_early_career_page",
+      "additional_source_refs": [
+        "schmidt_ai2050_early_career_evidence_1"
+      ]
+    },
+    {
+      "id": "os4science_software_future",
+      "title": "Open Source for Science Fund — 과학 소프트웨어 차기 공모",
+      "sponsor": "Open Source for Science Fund · Renaissance Philanthropy",
+      "category": "foundation",
+      "support_type": "collaborative",
+      "route": "collaboration",
+      "availability": "future_watch",
+      "fit": "conditional",
+      "fit_reason": "개인 프로필을 입력한 뒤 연구 적합도와 신청자격을 확인해야 합니다.",
+      "eligibility_summary": "해외 대학을 포함한 기관에 지급하며 개인에게 직접 지급하지 않습니다. PI는 핵심 maintainer 또는 지정 대표여야 합니다. 2026 공모는 2년간 도메인 도구 최대 USD 250,000, 기반 라이브러리 최대 USD 1,000,000입니다. 2026 Life Sciences 공모는 공개 코드·적법한 오픈소스 라이선스·생명과학 이용 실적·maintainer 동의를 요구합니다. 신규 AI 모델 자체나 초기 미사용 prototype은 현행 지원범위 밖입니다.",
+      "personal_constraints": [],
+      "application_timing": "2026 이력: 5월 11일 공고 → 6월 8일 14:00 PDT LOI 마감 → 6월 23일 본계획 초청 → 7월 21일 본계획 마감 → 10월부터 결과 안내. 차기 일정·지원 분야는 미발표입니다.",
+      "deadline": null,
+      "deadline_timezone": null,
+      "next_action": "공식 공고에서 현재 모집 일정·지원 자격·신청 절차를 확인하십시오.",
+      "evidence_note": "공식 2026 모집요강의 마감·기관 자격·실사용·maintainer 조건과 공모 목록의 Closed 표시를 확인했습니다. 즉시 신청 후보로 분류하지 않았습니다.",
+      "checked_on": "2026-11-07",
+      "source_ref": "os4science_software_future_page",
+      "additional_source_refs": [
+        "os4science_software_future_evidence_1"
+      ]
+    }
+  ]
+}

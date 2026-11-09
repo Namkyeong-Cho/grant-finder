@@ -1,11 +1,11 @@
 {
-  "checked_on": "2026-11-08",
-  "pages": 38,
+  "checked_on": "2026-11-09",
+  "pages": 47,
   "first_topic": "Qwen3.8 27B and Ollama setup before Grant Finder workflow",
   "exporter": "@marp-team/marp-cli 4.5.0",
   "build_command": "npm --prefix agentic_ai/marp run pdf:week10",
-  "markdown_sha256": "a4bc400a39762bdcfc6b9b5162177af5a6d5b1db005480d66cdb91283a219eae",
-  "pdf_sha256": "95532787254992e6118669538392212bb3e0145db20d648169345bf0eb3f18d7",
+  "markdown_sha256": "a750acad502dfe6bcba65fd85b6e7e53c8f4fc92f8144e2097aa7f785ed6813c",
+  "pdf_sha256": "8c75b949b946f5f1b9af00fb37b34da3d305272f3df7a9b382a3d6ed46c0f176",
   "all_screens_current": true,
   "screens": [
     {
@@ -50,7 +50,7 @@
   "code_syntax": {
     "python_snippets": 10,
     "javascript_snippets": 5,
-    "shell_blocks": 5
+    "shell_blocks": 6
   },
   "examples_verified": [
     "JSON import without model -> ['PDE']",
@@ -65,7 +65,8 @@
   "previous_111_page_version": "archive/2026-11-08_111pages/",
   "research_only_examples": true,
   "latest_reviewed_pages": [
-    4
+    13,
+    14
   ],
   "lecture_introduction": {
     "restored": [
@@ -74,7 +75,7 @@
       "current completed interface"
     ],
     "existing_walkthrough_slides_preserved": 29,
-    "existing_walkthrough_starts_on": 10,
+    "existing_walkthrough_starts_on": 12,
     "layout_check": "Native Marp HTML and generated PDF opening pages verified",
     "pdf_opened": false,
     "problem_heading": "연구지원 기회 탐색 및 신청 준비",
@@ -84,7 +85,8 @@
       4,
       5,
       6,
-      7
+      7,
+      8
     ]
   },
   "portable_execution_instructions": {
@@ -94,16 +96,16 @@
     "readme_includes_windows": true,
     "standalone_smoke_check": "Copied app into temporary directory and created fresh venv; run.py serve --help passed with no course parent folder",
     "layout_check_pages": [
-      11,
-      34,
-      36,
-      37
+      13,
+      42,
+      44,
+      45
     ]
   },
   "title_style_revision": {
     "style": "Concise nominal slide titles",
     "changed_titles": 29,
-    "reviewed_titles": 38,
+    "reviewed_titles": 46,
     "body_and_code_unchanged": true,
     "all_titles_one_line": true,
     "heading_overflow": 0,
@@ -141,5 +143,90 @@
       "README Windows timezone dependency included"
     ]
   },
-  "latest_edit_on": "2026-11-09"
+  "latest_edit_on": "2026-11-09",
+  "ai_concepts_update": {
+    "checked_on": "2026-11-09",
+    "new_pages": [
+      {
+        "page": 3,
+        "title": "언어모델의 문맥 처리와 응답 생성"
+      },
+      {
+        "page": 11,
+        "title": "사용 단계별 AI 기술과 산출물"
+      },
+      {
+        "page": 19,
+        "title": "프롬프트 설계와 문서 정보 추출"
+      },
+      {
+        "page": 21,
+        "title": "JSON 스키마 기반 구조화 출력"
+      },
+      {
+        "page": 26,
+        "title": "사람의 검토와 컨텍스트 재사용"
+      },
+      {
+        "page": 32,
+        "title": "검색어 계획과 웹 리트리벌"
+      },
+      {
+        "page": 37,
+        "title": "워크플로와 도구 호출 에이전트"
+      },
+      {
+        "page": 39,
+        "title": "검색 증강 생성과 원문 기반 조건 검토"
+      }
+    ],
+    "original_38_slides_retained_in_order": true,
+    "original_code_examples_unchanged": true,
+    "concept_to_implementation_audit": "Verified against cv_profile, llm, workspace, opportunity_review, agent modules",
+    "web_workflow_and_cli_tool_calling_distinguished": true,
+    "web_retrieval_not_claimed_as_vector_search": true,
+    "screens_recaptured_in_this_update": false,
+    "official_sources": [
+      "https://qwen.readthedocs.io/en/stable/getting_started/concepts.html",
+      "https://docs.ollama.com/capabilities/structured-outputs",
+      "https://docs.ollama.com/capabilities/tool-calling",
+      "https://arxiv.org/abs/2005.11401"
+    ],
+    "layout_review": "All 46 native Marp HTML slides passed; new concept pages visually checked; generated PDF titles and selected pages checked",
+    "review_artifacts": "/tmp/week10-ai-tech-qa/"
+  },
+  "code_sharing": {
+    "checked_on": "2026-11-09",
+    "repository_url": "https://github.com/Namkyeong-Cho/grant-finder",
+    "publication_status": "public",
+    "download_page": 13,
+    "environment_setup_page": 14,
+    "download_methods": [
+      "GitHub Code > Download ZIP; extract and rename the folder to grant_finder",
+      "git clone https://github.com/Namkyeong-Cho/grant-finder.git grant_finder"
+    ],
+    "original_46_slides_unchanged": true,
+    "original_46_slide_source_sha256": "acef247dba24dd34002473334d9fa6035084ccc650a0ceafc256971be55779df",
+    "layout_review": "All 47 native Marp HTML slides checked for content and code overflow; PDF pages 13 and 14 rendered and visually checked",
+    "pdf_repository_link_verified": true,
+    "pdf_zip_and_clone_instructions_verified": true,
+    "shell_blocks_syntax_checked": 6,
+    "shell_syntax_errors": [],
+    "javascript_errors": [],
+    "publication_verification": {
+      "performed_by": "publishing agent in the same session",
+      "anonymous_zip_download": "passed",
+      "archive_files": 106,
+      "excluded_personal_and_runtime_data": [
+        "personal profiles",
+        "local settings",
+        "outputs",
+        "cache",
+        "state"
+      ],
+      "fresh_directory_command": "python3 run.py demo --as-of 2026-11-06",
+      "fresh_directory_result": "passed; generated HTML and Markdown with the fictional demo profile"
+    },
+    "review_artifacts": "/tmp/week10-code-share-qa/"
+  }
 }

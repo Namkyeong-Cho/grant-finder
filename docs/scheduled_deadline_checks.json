@@ -1,0 +1,49 @@
+{
+  "checked_on": "2026-11-09",
+  "policy": {
+    "estimated_period_minimum_calendar_months_ahead": 2,
+    "month_range_reference": "first month",
+    "exact_deadline_takes_precedence": true,
+    "stored_deadline_unchanged": true,
+    "estimated_kinds": [
+      "application",
+      "deadline",
+      "announcement"
+    ]
+  },
+  "validation": {
+    "deadline_tests_passed": 29,
+    "all_tests_passed": 355,
+    "browser": {
+      "open": 2,
+      "unconfirmed": 2,
+      "closed": 1,
+      "plannedLabels": [
+        "마감 예정",
+        "접수 예정"
+      ],
+      "viewports": [
+        1440,
+        390
+      ],
+      "horizontalOverflow": false,
+      "errors": [],
+      "realApiWrites": 0,
+      "externalRequests": 0
+    },
+    "runtime_only_metadata_verified_through_http": true,
+    "user_data_modified_by_checks": false,
+    "server_restarted": true
+  },
+  "examples": {
+    "2027년3월 별도공고,4월접수,9월개시 예정": "2027-04 / application / open",
+    "2027년1월공고,3월까지 접수,12월1일 개시 예정": "2027-03 / deadline / open"
+  },
+  "source_sha256": {
+    "grantfinder/deadline_status.py": "c85d5173bbbbee5940311a6be239dc69c20a5e7a661f1c23baf40e59d081b82d",
+    "grantfinder/web/dashboard.html": "51f4bbee769b1c3a129ab700d4ca2038bc43c8cbdfc47397e14d67a68609122b",
+    "tests/test_deadline_status.py": "53b30dc93f637983432c2d5775d6bc26904491fa1066befcc276f2d6571eec35",
+    "README.md": "db9f1e93ce24d39e4be12f2da2a0eb0f50f96be363cf3ca8f346c40937c78d14"
+  },
+  "browser_artifacts": "/tmp/grant-scheduled-deadlines-qa/"
+}

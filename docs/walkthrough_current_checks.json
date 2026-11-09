@@ -4,8 +4,8 @@
   "first_topic": "Qwen3.8 27B and Ollama setup before Grant Finder workflow",
   "exporter": "@marp-team/marp-cli 4.5.0",
   "build_command": "npm --prefix agentic_ai/marp run pdf:week10",
-  "markdown_sha256": "35610aeea77a3703c1e87bd54ea78557ee24022679e68c75adc88fffa2c58963",
-  "pdf_sha256": "2d23b10a105676f5d2e04457b590e8d28aa0552041973f1ffc17bc7888625a98",
+  "markdown_sha256": "0e192df85d90d5738a9a8cf8670c035b08aaeaf5f8881b5493b26332e68d0da2",
+  "pdf_sha256": "24347130599c0376becfda1fcb212a2e69ec086527bd65ca43437956d9ff1110",
   "all_screens_current": true,
   "screens": [
     {
@@ -65,7 +65,7 @@
   "previous_111_page_version": "archive/2026-11-08_111pages/",
   "research_only_examples": true,
   "latest_reviewed_pages": [
-    3
+    4
   ],
   "lecture_introduction": {
     "restored": [
